@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Akka learning | GangZhang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="What is Akka? Akka is an open-source toolkit and runtime simplifying theconstruction of concurrent and distributed applications on the JVM.Akka supports multiple programming models for concurrency, bu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Akka learning">
+<meta property="og:url" content="http://gangzhang.top/2018/03/26/2017-08-20-Akka-learning/index.html">
+<meta property="og:site_name" content="GangZhang&#39;s Blog">
+<meta property="og:description" content="What is Akka? Akka is an open-source toolkit and runtime simplifying theconstruction of concurrent and distributed applications on the JVM.Akka supports multiple programming models for concurrency, bu">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/arunma/blogimages/master/Akka1/TeacherRequestFlowSimulatedApp.png">
+<meta property="og:image" content="https://doc.akka.io/docs/akka/2.5.5/images/member-states.png">
+<meta property="og:image" content="https://image.slidesharecdn.com/2015-akka-2-150901201123-lva1-app6892/95/akka-24-plus-commercial-features-in-typesafe-reactive-platform-23-638.jpg?cb=1441876825">
+<meta property="og:image" content="https://image.slidesharecdn.com/2015-akka-2-150901201123-lva1-app6892/95/akka-24-plus-commercial-features-in-typesafe-reactive-platform-25-638.jpg?cb=1441876825">
+<meta property="og:image" content="http://gangzhang.top/2018/03/26/images/odl_akka1.png">
+<meta property="og:image" content="http://gangzhang.top/2018/03/26/images/odl_akka2.png">
+<meta property="og:image" content="http://gangzhang.top/2018/03/26/images/odl_akka3.png">
+<meta property="og:updated_time" content="2018-05-06T10:27:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Akka learning">
+<meta name="twitter:description" content="What is Akka? Akka is an open-source toolkit and runtime simplifying theconstruction of concurrent and distributed applications on the JVM.Akka supports multiple programming models for concurrency, bu">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/arunma/blogimages/master/Akka1/TeacherRequestFlowSimulatedApp.png">
+  
+    <link rel="alternative" href="/atom.xml" title="GangZhang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">GangZhang&#39;s Blog</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://gangzhang.top"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-2017-08-20-Akka-learning" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/03/26/2017-08-20-Akka-learning/" class="article-date">
+  <time datetime="2018-03-25T16:45:52.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">Gang Zhang</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Akka learning
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h2 id="What-is-Akka"><a href="#What-is-Akka" class="headerlink" title="What is Akka?"></a>What is Akka?</h2><blockquote>
+<p>Akka is an open-source toolkit and runtime simplifying the<br>construction of concurrent and distributed applications on the JVM.<br>Akka supports multiple programming models for concurrency, but it<br>emphasizes actor-based concurrency, with inspiration drawn from<br>Erlang.</p>
+<p>Language bindings exist for both Java and Scala. Akka is written in<br>Scala and, as of Scala 2.10, Akka’s actor implementation is included<br>as part of the Scala standard library.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Akka_(toolkit" target="_blank" rel="noopener">From wiki</a>)</p>
+<blockquote>
+<p>Akka is a toolkit and runtime for building highly concurrent, distributed, and fault tolerant event-driven applications on the JVM.<br>Build powerful concurrent &amp; distributed applications more easily.</p>
+</blockquote>
+<p><a href="http://akka.io/" target="_blank" rel="noopener">From Akka.io</a></p>
+<p>简单来说：</p>
+<blockquote>
+<p>akka是一个用scala编写的库，用于简化编写可容错的，可扩展的，高并发应用。akka使用actor模型来提升抽象能力，提供更好的平台来构建可扩展的，弹性的应用。对于比较难处理的错误，akka采用“let it crash”模型来处理，这种模式可以使得一个任务的处理失败不会导致整个应用的crash，使你的系统拥有强大的自愈能力，也不需要重启来恢复系统。同时akka的分布式部署更加简单透明。</p>
+</blockquote>
+<hr>
+<h2 id="Why-Akka？"><a href="#Why-Akka？" class="headerlink" title="Why Akka？"></a>Why Akka？</h2><blockquote>
+<p>akka是一个可扩展性非常强的软件，这不仅不仅体现在性能上，而且还体现在它可适用的系统规模上。akka的核心包akka-actor非常小，对于已有的需要异步和无锁并发的系统而言，很容易就可以把akka融入进去。akka适用的前景非常广泛，可使用于金融系统，游戏，医疗，交通，仿真，数据分析等等场景，只要需要高吞吐量、低延迟的系统，akka就是一个可供选择的对象。</p>
+</blockquote>
+<p><a href="https://doc.akka.io/docs/akka/2.3.16/intro/why-akka.html" target="_blank" rel="noopener">From Akka docs</a></p>
+<hr>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><img src="https://raw.githubusercontent.com/arunma/blogimages/master/Akka1/TeacherRequestFlowSimulatedApp.png" alt="Actor model"></p>
+<h3 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h3><p>Akka中的角色</p>
+<blockquote>
+<ul>
+<li>ProducerActor(StudentActor)</li>
+<li>ConsumerActor(TeacherActor，onReceive方法接收消息)</li>
+<li>ActorRef(tell方法，发送消息给MessageDispatcher消息派发器)</li>
+<li>ActorSystem(actorOf方法，创建ActorRef，ActorRef就是ConsumerActor的Proxy)</li>
+<li>MailBox</li>
+<li>Dispatcher</li>
+<li>Message</li>
+</ul>
+</blockquote>
+<p>传送门：<a href="http://ifeve.com/akka-notes-actor-messaging-1/" target="_blank" rel="noopener">Akka简介</a></p>
+<h2 id="关于集群"><a href="#关于集群" class="headerlink" title="关于集群"></a>关于集群</h2><h3 id="1-Seed-Nodes"><a href="#1-Seed-Nodes" class="headerlink" title="1.Seed Nodes"></a>1.Seed Nodes</h3><blockquote>
+<p>The seed nodes are configured contact points for new nodes joining the cluster. When a new node is started it sends a message to all seed nodes and then sends a join command to the seed node that answers first.</p>
+</blockquote>
+<blockquote>
+<p>The seed nodes configuration value does not have any influence on the running cluster itself, it is only relevant for new nodes joining the cluster as it helps them to find contact points to send the join command to; a new member can send this command to any current member of the cluster, not only to the seed nodes.</p>
+</blockquote>
+<h3 id="FSM"><a href="#FSM" class="headerlink" title="FSM"></a>FSM</h3><p><img src="https://doc.akka.io/docs/akka/2.5.5/images/member-states.png" alt="FSM"></p>
+<h4 id="1-Member-States"><a href="#1-Member-States" class="headerlink" title="1.Member States"></a>1.Member States</h4><blockquote>
+<ul>
+<li>joining - transient state when joining a cluster</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>weakly up - transient state while network split (only if akka.cluster.allow-weakly-up-members=on)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>up - normal operating state</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>leaving / exiting - states during graceful removal</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>down - marked as down (no longer part of cluster decisions)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>removed - tombstone state (no longer a member)</li>
+</ul>
+</blockquote>
+<h4 id="2-User-Actions"><a href="#2-User-Actions" class="headerlink" title="2.User Actions"></a>2.User Actions</h4><blockquote>
+<ul>
+<li>join - join a single node to a cluster - can be explicit or automatic on startup if a node to join have been specified in the configuration</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>leave - tell a node to leave the cluster gracefully</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>down - mark a node as down</li>
+</ul>
+</blockquote>
+<h4 id="3-Leader-Actions"><a href="#3-Leader-Actions" class="headerlink" title="3.Leader Actions"></a>3.Leader Actions</h4><blockquote>
+<ul>
+<li>The leader has the following duties:</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>shifting members in and out of the cluster<blockquote>
+<p>joining -&gt; up</p>
+<p>exiting -&gt; removed</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p><a href="https://doc.akka.io/docs/akka/2.5.5/scala/common/cluster.html#failure-detector" target="_blank" rel="noopener">akka clustering</a></p>
+<hr>
+<h2 id="关于脑裂"><a href="#关于脑裂" class="headerlink" title="关于脑裂"></a>关于脑裂</h2><h3 id="What-is-Brain-Split"><a href="#What-is-Brain-Split" class="headerlink" title="What is Brain Split"></a>What is Brain Split</h3><blockquote>
+<p>A fundamental problem in distributed systems is that network partitions (split brain scenarios) and machine crashes are indistinguishable for the observer,<br>i.e. a node can observe that there is a problem with another node, but it cannot tell if it has crashed and will never be available again or<br>if there is a network issue that might or might not heal again after a while. Temporary and permanent failures are indistinguishable because decisions must be made in finite time,<br>and there always exists a temporary failure that lasts longer than the time limit for the decision.</p>
+</blockquote>
+<p>脑裂常常发身在网络故障的时候，把一个分布式的系统，分成了至少2个partitions。 并且这两个partitions不能识别出到底谁才是正常的，因为集群需要再一个有限的短时间内做出一个判断，而网络的故障的时间是不定。<br>最终造成了整个集群处于一种不可用的状态。</p>
+<h3 id="Split-Brain-Resolver-strategy"><a href="#Split-Brain-Resolver-strategy" class="headerlink" title="Split Brain Resolver strategy"></a>Split Brain Resolver strategy</h3><p>所有策略的前提是，集群处于一个稳定的(stable)状态。 也就是说，在这个时间点，已经发生了脑裂，但是，不会有反复 (back and force )节点的 up/down。<br>基于这个前提，akka提供了一些策略，来应付脑裂的情况。</p>
+<h4 id="1-Static-Quorum"><a href="#1-Static-Quorum" class="headerlink" title="1.Static Quorum"></a>1.Static Quorum</h4><p>配置文件中，固定一个数值(static quorum) 当集群发生脑裂的时候，任何一个partition中的node &gt;= 过这个值，则认定是有效的。<br>数值和集群有一关系 总节点数，必须小于 quorum-size * 2 - 1 ， 当然，也必须大于 quorum。</p>
+<p>这个策略的有点是， 在任何脑裂发生的时候，当产生两个 partition的时候，效果是非常显著的， 因为必然会推举出一个 partition 有效。 另一个无效。<br>他的缺点是 :<br>a) quorum的数值是静态配置的，如果集群动态增加node，这个值必须随之而调整。<br>b） 如果partitions的数量超过2。 比如 10 Nodes，static quorum最小的值是6 ，如果发生脑裂时，将集群划分为3个partition，分别是 (3,3,4) ，那么任何partition都无法运作。</p>
+<p>总的来说， Static Quorum相对简单粗放一些，可以应对大部分的异常，也有不少分布式系统使用的是这个策略， 比如 Elasticsearch。<br><img src="https://image.slidesharecdn.com/2015-akka-2-150901201123-lva1-app6892/95/akka-24-plus-commercial-features-in-typesafe-reactive-platform-23-638.jpg?cb=1441876825" alt="Static Quorum"></p>
+<h4 id="2-Keep-Majority"><a href="#2-Keep-Majority" class="headerlink" title="2.Keep Majority"></a>2.Keep Majority</h4><p>基本规则是保留整个 partition中，拥有majority nodes的partition。<br>他和 static quorum相比的好处是， 如果整个 cluster 的nodes数量是动态调整的，那么majority也是一个动态的值，这样会避免 static quorum的问题。<br>但此策略依旧不能避免的是，如果两个 partitions所拥有的node数量是相同的，那么，整个 cluster 将会被终止。</p>
+<p>此外，akka提供了基于 keep majority，额外的一个配置项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> akka.cluster.split-brain-resolver.keep-majority &#123;</span><br><span class="line">  # if the &apos;role&apos; is defined the decision is based only on members with that &apos;role&apos;</span><br><span class="line">  role = &quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以对于某些node定义他的价值，如果在多个partition中，拥有这些 valuable的节点数量较多的话，就会保留这个partition。<br>这个选项对于一个多角色的集群，某些node是无状态的(stateless)的工作节点，他们相对而言价值较低，而某些节点可能是数据持久化节点，或者是Master节点。<br>这样就可以区分出来多个Partition的价值，而保留价值高的部分。<br><img src="https://image.slidesharecdn.com/2015-akka-2-150901201123-lva1-app6892/95/akka-24-plus-commercial-features-in-typesafe-reactive-platform-25-638.jpg?cb=1441876825" alt="keep maj"></p>
+<h4 id="3-Keep-Oldest"><a href="#3-Keep-Oldest" class="headerlink" title="3.Keep Oldest"></a>3.Keep Oldest</h4><p>顾名思义，整个集群只保留一个拥有最老节点的partition<br>当然，有一个特例是，如果某一个partition，只有这一个oldest node，则这个partition会关闭它自己。<br>这个策略适用于一些 Singleton 的场景，即某些特殊的服务只存在于 oldest的节点上。</p>
+<h4 id="4-Keep-Referee"><a href="#4-Keep-Referee" class="headerlink" title="4.Keep Referee"></a>4.Keep Referee</h4><p>这个策略和 Keepr oldest类似，只是把 oldest节点替换成了 referee节点，referee节点可以是cluster中的任意一台。</p>
+<p><a href="http://www.slideshare.net/Typesafe_Inc/akka-24-plus-commercial-features-in-typesafe-reactive-platform" target="_blank" rel="noopener">new features about aplit brain resolver in Akka 2.4</a></p>
+<p><a href="https://developer.lightbend.com/docs/akka-commercial-addons/current/" target="_blank" rel="noopener">Akka Commercial Addons</a></p>
+<hr>
+<h2 id="Using-in-OpenDaylight"><a href="#Using-in-OpenDaylight" class="headerlink" title="Using in OpenDaylight"></a>Using in OpenDaylight</h2><p><img src="../images/odl_akka1.png" alt="1"><br><img src="../images/odl_akka2.png" alt="2"><br><img src="../images/odl_akka3.png" alt="3"></p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://shiyanjun.cn/archives/1168.html" target="_blank" rel="noopener">[1] Akka框架基本要点介绍</a></p>
+<p><a href="https://doc.akka.io/docs/akka/2.3.16/java.html" target="_blank" rel="noopener">[2] Akka doc</a></p>
+<p><a href="https://developer.lightbend.com/guides/akka-quickstart-java/" target="_blank" rel="noopener">[3] Akka quick start</a></p>
+<p><a href="https://birdben.github.io/2015/11/12/Others/Akka%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" target="_blank" rel="noopener">[4] Akka工作原理</a></p>
+<p><a href="https://wiki.opendaylight.org/images/2/2d/MD-SAL_Akka_Prototype.pdf" target="_blank" rel="noopener">[5] MD-SAL Akka Prototype</a></p>
+<p><a href="http://shiyanjun.cn/archives/1186.html" target="_blank" rel="noopener">[6] Akka Cluster原理与应用</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/06/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/26/2018-01-06-Markdown 中使用 HTML 特殊符号/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Markdown 中使用 HTML 特殊符号
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:gangzhang.top">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">GangZhang&#39;s Blog</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2018 Gang Zhang<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

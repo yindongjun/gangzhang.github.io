@@ -62,7 +62,7 @@
 		
   
     <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2018/05/06/hello-world/">Hello World</a>
+      <a class="article-title" href="/2018/05/06/hello-world/">Hexo Hello World</a>
     </h1>
   
 
@@ -78,6 +78,933 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-2017-08-20-Akka-learning" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/03/26/2017-08-20-Akka-learning/" class="article-date">
+  <time datetime="2018-03-25T16:45:52.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">Gang Zhang</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2018/03/26/2017-08-20-Akka-learning/">Akka learning</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h2 id="What-is-Akka"><a href="#What-is-Akka" class="headerlink" title="What is Akka?"></a>What is Akka?</h2><blockquote>
+<p>Akka is an open-source toolkit and runtime simplifying the<br>construction of concurrent and distributed applications on the JVM.<br>Akka supports multiple programming models for concurrency, but it<br>emphasizes actor-based concurrency, with inspiration drawn from<br>Erlang.</p>
+<p>Language bindings exist for both Java and Scala. Akka is written in<br>Scala and, as of Scala 2.10, Akka’s actor implementation is included<br>as part of the Scala standard library.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Akka_(toolkit" target="_blank" rel="noopener">From wiki</a>)</p>
+<blockquote>
+<p>Akka is a toolkit and runtime for building highly concurrent, distributed, and fault tolerant event-driven applications on the JVM.<br>Build powerful concurrent &amp; distributed applications more easily.</p>
+</blockquote>
+<p><a href="http://akka.io/" target="_blank" rel="noopener">From Akka.io</a></p>
+<p>简单来说：</p>
+<blockquote>
+<p>akka是一个用scala编写的库，用于简化编写可容错的，可扩展的，高并发应用。akka使用actor模型来提升抽象能力，提供更好的平台来构建可扩展的，弹性的应用。对于比较难处理的错误，akka采用“let it crash”模型来处理，这种模式可以使得一个任务的处理失败不会导致整个应用的crash，使你的系统拥有强大的自愈能力，也不需要重启来恢复系统。同时akka的分布式部署更加简单透明。</p>
+</blockquote>
+<hr>
+<h2 id="Why-Akka？"><a href="#Why-Akka？" class="headerlink" title="Why Akka？"></a>Why Akka？</h2><blockquote>
+<p>akka是一个可扩展性非常强的软件，这不仅不仅体现在性能上，而且还体现在它可适用的系统规模上。akka的核心包akka-actor非常小，对于已有的需要异步和无锁并发的系统而言，很容易就可以把akka融入进去。akka适用的前景非常广泛，可使用于金融系统，游戏，医疗，交通，仿真，数据分析等等场景，只要需要高吞吐量、低延迟的系统，akka就是一个可供选择的对象。</p>
+</blockquote>
+<p><a href="https://doc.akka.io/docs/akka/2.3.16/intro/why-akka.html" target="_blank" rel="noopener">From Akka docs</a></p>
+<hr>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><img src="https://raw.githubusercontent.com/arunma/blogimages/master/Akka1/TeacherRequestFlowSimulatedApp.png" alt="Actor model"></p>
+<h3 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h3><p>Akka中的角色</p>
+<blockquote>
+<ul>
+<li>ProducerActor(StudentActor)</li>
+<li>ConsumerActor(TeacherActor，onReceive方法接收消息)</li>
+<li>ActorRef(tell方法，发送消息给MessageDispatcher消息派发器)</li>
+<li>ActorSystem(actorOf方法，创建ActorRef，ActorRef就是ConsumerActor的Proxy)</li>
+<li>MailBox</li>
+<li>Dispatcher</li>
+<li>Message</li>
+</ul>
+</blockquote>
+<p>传送门：<a href="http://ifeve.com/akka-notes-actor-messaging-1/" target="_blank" rel="noopener">Akka简介</a></p>
+<h2 id="关于集群"><a href="#关于集群" class="headerlink" title="关于集群"></a>关于集群</h2><h3 id="1-Seed-Nodes"><a href="#1-Seed-Nodes" class="headerlink" title="1.Seed Nodes"></a>1.Seed Nodes</h3><blockquote>
+<p>The seed nodes are configured contact points for new nodes joining the cluster. When a new node is started it sends a message to all seed nodes and then sends a join command to the seed node that answers first.</p>
+</blockquote>
+<blockquote>
+<p>The seed nodes configuration value does not have any influence on the running cluster itself, it is only relevant for new nodes joining the cluster as it helps them to find contact points to send the join command to; a new member can send this command to any current member of the cluster, not only to the seed nodes.</p>
+</blockquote>
+<h3 id="FSM"><a href="#FSM" class="headerlink" title="FSM"></a>FSM</h3><p><img src="https://doc.akka.io/docs/akka/2.5.5/images/member-states.png" alt="FSM"></p>
+<h4 id="1-Member-States"><a href="#1-Member-States" class="headerlink" title="1.Member States"></a>1.Member States</h4><blockquote>
+<ul>
+<li>joining - transient state when joining a cluster</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>weakly up - transient state while network split (only if akka.cluster.allow-weakly-up-members=on)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>up - normal operating state</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>leaving / exiting - states during graceful removal</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>down - marked as down (no longer part of cluster decisions)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>removed - tombstone state (no longer a member)</li>
+</ul>
+</blockquote>
+<h4 id="2-User-Actions"><a href="#2-User-Actions" class="headerlink" title="2.User Actions"></a>2.User Actions</h4><blockquote>
+<ul>
+<li>join - join a single node to a cluster - can be explicit or automatic on startup if a node to join have been specified in the configuration</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>leave - tell a node to leave the cluster gracefully</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>down - mark a node as down</li>
+</ul>
+</blockquote>
+<h4 id="3-Leader-Actions"><a href="#3-Leader-Actions" class="headerlink" title="3.Leader Actions"></a>3.Leader Actions</h4><blockquote>
+<ul>
+<li>The leader has the following duties:</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>shifting members in and out of the cluster<blockquote>
+<p>joining -&gt; up</p>
+<p>exiting -&gt; removed</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p><a href="https://doc.akka.io/docs/akka/2.5.5/scala/common/cluster.html#failure-detector" target="_blank" rel="noopener">akka clustering</a></p>
+<hr>
+<h2 id="关于脑裂"><a href="#关于脑裂" class="headerlink" title="关于脑裂"></a>关于脑裂</h2><h3 id="What-is-Brain-Split"><a href="#What-is-Brain-Split" class="headerlink" title="What is Brain Split"></a>What is Brain Split</h3><blockquote>
+<p>A fundamental problem in distributed systems is that network partitions (split brain scenarios) and machine crashes are indistinguishable for the observer,<br>i.e. a node can observe that there is a problem with another node, but it cannot tell if it has crashed and will never be available again or<br>if there is a network issue that might or might not heal again after a while. Temporary and permanent failures are indistinguishable because decisions must be made in finite time,<br>and there always exists a temporary failure that lasts longer than the time limit for the decision.</p>
+</blockquote>
+<p>脑裂常常发身在网络故障的时候，把一个分布式的系统，分成了至少2个partitions。 并且这两个partitions不能识别出到底谁才是正常的，因为集群需要再一个有限的短时间内做出一个判断，而网络的故障的时间是不定。<br>最终造成了整个集群处于一种不可用的状态。</p>
+<h3 id="Split-Brain-Resolver-strategy"><a href="#Split-Brain-Resolver-strategy" class="headerlink" title="Split Brain Resolver strategy"></a>Split Brain Resolver strategy</h3><p>所有策略的前提是，集群处于一个稳定的(stable)状态。 也就是说，在这个时间点，已经发生了脑裂，但是，不会有反复 (back and force )节点的 up/down。<br>基于这个前提，akka提供了一些策略，来应付脑裂的情况。</p>
+<h4 id="1-Static-Quorum"><a href="#1-Static-Quorum" class="headerlink" title="1.Static Quorum"></a>1.Static Quorum</h4><p>配置文件中，固定一个数值(static quorum) 当集群发生脑裂的时候，任何一个partition中的node &gt;= 过这个值，则认定是有效的。<br>数值和集群有一关系 总节点数，必须小于 quorum-size * 2 - 1 ， 当然，也必须大于 quorum。</p>
+<p>这个策略的有点是， 在任何脑裂发生的时候，当产生两个 partition的时候，效果是非常显著的， 因为必然会推举出一个 partition 有效。 另一个无效。<br>他的缺点是 :<br>a) quorum的数值是静态配置的，如果集群动态增加node，这个值必须随之而调整。<br>b） 如果partitions的数量超过2。 比如 10 Nodes，static quorum最小的值是6 ，如果发生脑裂时，将集群划分为3个partition，分别是 (3,3,4) ，那么任何partition都无法运作。</p>
+<p>总的来说， Static Quorum相对简单粗放一些，可以应对大部分的异常，也有不少分布式系统使用的是这个策略， 比如 Elasticsearch。<br><img src="https://image.slidesharecdn.com/2015-akka-2-150901201123-lva1-app6892/95/akka-24-plus-commercial-features-in-typesafe-reactive-platform-23-638.jpg?cb=1441876825" alt="Static Quorum"></p>
+<h4 id="2-Keep-Majority"><a href="#2-Keep-Majority" class="headerlink" title="2.Keep Majority"></a>2.Keep Majority</h4><p>基本规则是保留整个 partition中，拥有majority nodes的partition。<br>他和 static quorum相比的好处是， 如果整个 cluster 的nodes数量是动态调整的，那么majority也是一个动态的值，这样会避免 static quorum的问题。<br>但此策略依旧不能避免的是，如果两个 partitions所拥有的node数量是相同的，那么，整个 cluster 将会被终止。</p>
+<p>此外，akka提供了基于 keep majority，额外的一个配置项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> akka.cluster.split-brain-resolver.keep-majority &#123;</span><br><span class="line">  # if the &apos;role&apos; is defined the decision is based only on members with that &apos;role&apos;</span><br><span class="line">  role = &quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以对于某些node定义他的价值，如果在多个partition中，拥有这些 valuable的节点数量较多的话，就会保留这个partition。<br>这个选项对于一个多角色的集群，某些node是无状态的(stateless)的工作节点，他们相对而言价值较低，而某些节点可能是数据持久化节点，或者是Master节点。<br>这样就可以区分出来多个Partition的价值，而保留价值高的部分。<br><img src="https://image.slidesharecdn.com/2015-akka-2-150901201123-lva1-app6892/95/akka-24-plus-commercial-features-in-typesafe-reactive-platform-25-638.jpg?cb=1441876825" alt="keep maj"></p>
+<h4 id="3-Keep-Oldest"><a href="#3-Keep-Oldest" class="headerlink" title="3.Keep Oldest"></a>3.Keep Oldest</h4><p>顾名思义，整个集群只保留一个拥有最老节点的partition<br>当然，有一个特例是，如果某一个partition，只有这一个oldest node，则这个partition会关闭它自己。<br>这个策略适用于一些 Singleton 的场景，即某些特殊的服务只存在于 oldest的节点上。</p>
+<h4 id="4-Keep-Referee"><a href="#4-Keep-Referee" class="headerlink" title="4.Keep Referee"></a>4.Keep Referee</h4><p>这个策略和 Keepr oldest类似，只是把 oldest节点替换成了 referee节点，referee节点可以是cluster中的任意一台。</p>
+<p><a href="http://www.slideshare.net/Typesafe_Inc/akka-24-plus-commercial-features-in-typesafe-reactive-platform" target="_blank" rel="noopener">new features about aplit brain resolver in Akka 2.4</a></p>
+<p><a href="https://developer.lightbend.com/docs/akka-commercial-addons/current/" target="_blank" rel="noopener">Akka Commercial Addons</a></p>
+<hr>
+<h2 id="Using-in-OpenDaylight"><a href="#Using-in-OpenDaylight" class="headerlink" title="Using in OpenDaylight"></a>Using in OpenDaylight</h2><p><img src="../images/odl_akka1.png" alt="1"><br><img src="../images/odl_akka2.png" alt="2"><br><img src="../images/odl_akka3.png" alt="3"></p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://shiyanjun.cn/archives/1168.html" target="_blank" rel="noopener">[1] Akka框架基本要点介绍</a></p>
+<p><a href="https://doc.akka.io/docs/akka/2.3.16/java.html" target="_blank" rel="noopener">[2] Akka doc</a></p>
+<p><a href="https://developer.lightbend.com/guides/akka-quickstart-java/" target="_blank" rel="noopener">[3] Akka quick start</a></p>
+<p><a href="https://birdben.github.io/2015/11/12/Others/Akka%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" target="_blank" rel="noopener">[4] Akka工作原理</a></p>
+<p><a href="https://wiki.opendaylight.org/images/2/2d/MD-SAL_Akka_Prototype.pdf" target="_blank" rel="noopener">[5] MD-SAL Akka Prototype</a></p>
+<p><a href="http://shiyanjun.cn/archives/1186.html" target="_blank" rel="noopener">[6] Akka Cluster原理与应用</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-2018-01-06-Markdown 中使用 HTML 特殊符号" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/03/26/2018-01-06-Markdown 中使用 HTML 特殊符号/" class="article-date">
+  <time datetime="2018-03-25T16:45:52.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">Gang Zhang</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2018/03/26/2018-01-06-Markdown 中使用 HTML 特殊符号/">Markdown 中使用 HTML 特殊符号</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">对应编码(去掉空格)</th>
+<th style="text-align:left">英文描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">AND 符号</td>
+<td style="text-align:left">&amp; amp;</td>
+<td style="text-align:left">ampersand</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">小于</td>
+<td style="text-align:left">&amp; lt;</td>
+<td style="text-align:left">little</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">大于</td>
+<td style="text-align:left">&amp; gt;</td>
+<td style="text-align:left">great</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">空格</td>
+<td style="text-align:left">&amp; nbsp;</td>
+<td style="text-align:left">number space</td>
+</tr>
+<tr>
+<td style="text-align:left">¿</td>
+<td style="text-align:left">倒问号</td>
+<td style="text-align:left">&amp; iquest;</td>
+<td style="text-align:left">inverted question</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">问号</td>
+<td style="text-align:left">&amp; quest;</td>
+<td style="text-align:left">question</td>
+</tr>
+<tr>
+<td style="text-align:left">«</td>
+<td style="text-align:left">左书名号</td>
+<td style="text-align:left">&amp; laquo;</td>
+<td style="text-align:left">left angle quote</td>
+</tr>
+<tr>
+<td style="text-align:left">»</td>
+<td style="text-align:left">右书名号</td>
+<td style="text-align:left">&amp; raquo;</td>
+<td style="text-align:left">right angle quote</td>
+</tr>
+<tr>
+<td style="text-align:left">“</td>
+<td style="text-align:left">引号</td>
+<td style="text-align:left">&amp; quot;</td>
+<td style="text-align:left">quote</td>
+</tr>
+<tr>
+<td style="text-align:left">‘</td>
+<td style="text-align:left">左单引号</td>
+<td style="text-align:left">&amp; lsquo;</td>
+<td style="text-align:left">left single quote</td>
+</tr>
+<tr>
+<td style="text-align:left">’</td>
+<td style="text-align:left">右单引号</td>
+<td style="text-align:left">&amp; rsquo:</td>
+<td style="text-align:left">right single quote</td>
+</tr>
+<tr>
+<td style="text-align:left">“</td>
+<td style="text-align:left">左双引号</td>
+<td style="text-align:left">&amp; ldquo:</td>
+<td style="text-align:left">left double quote</td>
+</tr>
+<tr>
+<td style="text-align:left">”</td>
+<td style="text-align:left">右双引号</td>
+<td style="text-align:left">&amp; rdquo:</td>
+<td style="text-align:left">right double quote</td>
+</tr>
+<tr>
+<td style="text-align:left">¶</td>
+<td style="text-align:left">段落符号</td>
+<td style="text-align:left">&amp; para;</td>
+<td style="text-align:left">paragraph</td>
+</tr>
+<tr>
+<td style="text-align:left">§</td>
+<td style="text-align:left">章节符</td>
+<td style="text-align:left">&amp; sect;</td>
+<td style="text-align:left">section</td>
+</tr>
+<tr>
+<td style="text-align:left">×</td>
+<td style="text-align:left">乘号</td>
+<td style="text-align:left">&amp; times;</td>
+<td style="text-align:left">times</td>
+</tr>
+<tr>
+<td style="text-align:left">÷</td>
+<td style="text-align:left">除号</td>
+<td style="text-align:left">&amp; divide;</td>
+<td style="text-align:left">divide</td>
+</tr>
+<tr>
+<td style="text-align:left">±</td>
+<td style="text-align:left">加减号</td>
+<td style="text-align:left">&amp; plusmn;</td>
+<td style="text-align:left">plus minus</td>
+</tr>
+<tr>
+<td style="text-align:left">ƒ</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">&amp; fnof;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">√</td>
+<td style="text-align:left">根号</td>
+<td style="text-align:left">&amp; radic;</td>
+<td style="text-align:left">radic</td>
+</tr>
+<tr>
+<td style="text-align:left">∞</td>
+<td style="text-align:left">无穷大</td>
+<td style="text-align:left">&amp; infin;</td>
+<td style="text-align:left">infinite</td>
+</tr>
+<tr>
+<td style="text-align:left">°</td>
+<td style="text-align:left">度</td>
+<td style="text-align:left">&amp; deg;</td>
+<td style="text-align:left">degree</td>
+</tr>
+<tr>
+<td style="text-align:left">≠</td>
+<td style="text-align:left">不等号</td>
+<td style="text-align:left">&amp; ne;</td>
+<td style="text-align:left">ne</td>
+</tr>
+<tr>
+<td style="text-align:left">≡</td>
+<td style="text-align:left">恒等于</td>
+<td style="text-align:left">&amp; equiv;</td>
+<td style="text-align:left">equivalent</td>
+</tr>
+<tr>
+<td style="text-align:left">≤</td>
+<td style="text-align:left">小于等于</td>
+<td style="text-align:left">&amp; le;</td>
+<td style="text-align:left">less than or equal to</td>
+</tr>
+<tr>
+<td style="text-align:left">≥</td>
+<td style="text-align:left">大于等于</td>
+<td style="text-align:left">&amp; ge;</td>
+<td style="text-align:left">great than or equal to</td>
+</tr>
+<tr>
+<td style="text-align:left">⊥</td>
+<td style="text-align:left">垂直符号</td>
+<td style="text-align:left">&amp; perp;</td>
+<td style="text-align:left">perpendicular</td>
+</tr>
+<tr>
+<td style="text-align:left">←</td>
+<td style="text-align:left">左箭头</td>
+<td style="text-align:left">&amp; larr;</td>
+<td style="text-align:left">left arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">→</td>
+<td style="text-align:left">右箭头</td>
+<td style="text-align:left">&amp; rarr;</td>
+<td style="text-align:left">right arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">↑</td>
+<td style="text-align:left">上箭头</td>
+<td style="text-align:left">&amp; uarr;</td>
+<td style="text-align:left">up arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">↓</td>
+<td style="text-align:left">下箭头</td>
+<td style="text-align:left">&amp; darr;</td>
+<td style="text-align:left">down arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">↔</td>
+<td style="text-align:left">水平箭头</td>
+<td style="text-align:left">&amp; harr;</td>
+<td style="text-align:left">horizontal arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">↕</td>
+<td style="text-align:left">竖直箭头</td>
+<td style="text-align:left">&amp; varr;</td>
+<td style="text-align:left">vertical arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">⇐</td>
+<td style="text-align:left">双线左箭头</td>
+<td style="text-align:left">&amp; lArr;</td>
+<td style="text-align:left">left arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">⇒</td>
+<td style="text-align:left">双线右箭头</td>
+<td style="text-align:left">&amp; rArr;</td>
+<td style="text-align:left">right arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">⇑</td>
+<td style="text-align:left">双线上箭头</td>
+<td style="text-align:left">&amp; uArr;</td>
+<td style="text-align:left">up arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">⇓</td>
+<td style="text-align:left">双线上箭头</td>
+<td style="text-align:left">&amp; dArr;</td>
+<td style="text-align:left">down arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">⇔</td>
+<td style="text-align:left">双线水平双箭头</td>
+<td style="text-align:left">&amp; hArr;</td>
+<td style="text-align:left">horizontal arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">⇕</td>
+<td style="text-align:left">双线竖直箭头</td>
+<td style="text-align:left">&amp; vArr;</td>
+<td style="text-align:left">vertical arrow</td>
+</tr>
+<tr>
+<td style="text-align:left">♠</td>
+<td style="text-align:left">黑桃</td>
+<td style="text-align:left">&amp; spades;</td>
+<td style="text-align:left">spades</td>
+</tr>
+<tr>
+<td style="text-align:left">♥</td>
+<td style="text-align:left">红桃</td>
+<td style="text-align:left">&amp; hearts;</td>
+<td style="text-align:left">hearts</td>
+</tr>
+<tr>
+<td style="text-align:left">♣</td>
+<td style="text-align:left">梅花</td>
+<td style="text-align:left">&amp; clubs;</td>
+<td style="text-align:left">club</td>
+</tr>
+<tr>
+<td style="text-align:left">♦</td>
+<td style="text-align:left">方块</td>
+<td style="text-align:left">&amp; diams;</td>
+<td style="text-align:left">diamonds</td>
+</tr>
+<tr>
+<td style="text-align:left">©</td>
+<td style="text-align:left">版权</td>
+<td style="text-align:left">&amp; copy;</td>
+<td style="text-align:left">copy right</td>
+</tr>
+<tr>
+<td style="text-align:left">®</td>
+<td style="text-align:left">注册商标</td>
+<td style="text-align:left">&amp; reg;</td>
+<td style="text-align:left">registration</td>
+</tr>
+<tr>
+<td style="text-align:left">™</td>
+<td style="text-align:left">商标</td>
+<td style="text-align:left">&amp; trade;</td>
+<td style="text-align:left">trade</td>
+</tr>
+<tr>
+<td style="text-align:left">¥</td>
+<td style="text-align:left">人民币</td>
+<td style="text-align:left">&amp; yen;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">€</td>
+<td style="text-align:left">欧元</td>
+<td style="text-align:left">&amp; euro;</td>
+<td style="text-align:left">euro</td>
+</tr>
+<tr>
+<td style="text-align:left">¢</td>
+<td style="text-align:left">美分</td>
+<td style="text-align:left">&amp; cent;</td>
+<td style="text-align:left">cent</td>
+</tr>
+<tr>
+<td style="text-align:left">£</td>
+<td style="text-align:left">英磅</td>
+<td style="text-align:left">&amp; pound;</td>
+<td style="text-align:left">pound</td>
+</tr>
+<tr>
+<td style="text-align:left">⊕</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">&amp; oplus;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">½</td>
+<td style="text-align:left">二分之一</td>
+<td style="text-align:left">&amp; frac12;</td>
+<td style="text-align:left">fraction</td>
+</tr>
+<tr>
+<td style="text-align:left">¼</td>
+<td style="text-align:left">四分之一</td>
+<td style="text-align:left">&amp; frac14;</td>
+<td style="text-align:left">fraction</td>
+</tr>
+<tr>
+<td style="text-align:left">‰</td>
+<td style="text-align:left">千分符号</td>
+<td style="text-align:left">&amp; permil;</td>
+<td style="text-align:left">per mille</td>
+</tr>
+<tr>
+<td style="text-align:left">∴</td>
+<td style="text-align:left">所以</td>
+<td style="text-align:left">&amp; there4;</td>
+<td style="text-align:left">there fore</td>
+</tr>
+<tr>
+<td style="text-align:left">π</td>
+<td style="text-align:left">圆周率</td>
+<td style="text-align:left">&amp; pi;</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">¹</td>
+<td style="text-align:left">商标1</td>
+<td style="text-align:left">&amp; sup1;</td>
+<td style="text-align:left">super 1</td>
+</tr>
+<tr>
+<td style="text-align:left">α</td>
+<td style="text-align:left">alpha</td>
+<td style="text-align:left">&amp; alpha;</td>
+<td style="text-align:left">alpha</td>
+</tr>
+<tr>
+<td style="text-align:left">β</td>
+<td style="text-align:left">beta</td>
+<td style="text-align:left">&amp; beta;</td>
+<td style="text-align:left">beta</td>
+</tr>
+<tr>
+<td style="text-align:left">γ</td>
+<td style="text-align:left">gamma</td>
+<td style="text-align:left">&amp; gamma;</td>
+<td style="text-align:left">gamma</td>
+</tr>
+<tr>
+<td style="text-align:left">δ</td>
+<td style="text-align:left">delta</td>
+<td style="text-align:left">&amp; delta;</td>
+<td style="text-align:left">delta</td>
+</tr>
+<tr>
+<td style="text-align:left">θ</td>
+<td style="text-align:left">theta</td>
+<td style="text-align:left">&amp; theta;</td>
+<td style="text-align:left">theta</td>
+</tr>
+<tr>
+<td style="text-align:left">λ</td>
+<td style="text-align:left">lambda</td>
+<td style="text-align:left">&amp; lambda;</td>
+<td style="text-align:left">lambda</td>
+</tr>
+<tr>
+<td style="text-align:left">σ</td>
+<td style="text-align:left">sigma</td>
+<td style="text-align:left">&amp; sigma;</td>
+<td style="text-align:left">sigma</td>
+</tr>
+<tr>
+<td style="text-align:left">τ</td>
+<td style="text-align:left">tau</td>
+<td style="text-align:left">&amp; tau;</td>
+<td style="text-align:left">tau</td>
+</tr>
+</tbody>
+</table>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-2018-01-06-Getting start with SNS" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/03/26/2018-01-06-Getting start with SNS/" class="article-date">
+  <time datetime="2018-03-25T16:45:52.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">Gang Zhang</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2018/03/26/2018-01-06-Getting start with SNS/">Getting start with SNS</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><blockquote>
+<p>This topic describes how to create a SNS topic, subscribe an exist SNS topic, publish messages by the AWS SDK(also Spring Cloud Messaging easy to use).We make a simple demo to make publishing message to SQS/Http work.</p>
+</blockquote>
+<h2 id="Maven-Dependency"><a href="#Maven-Dependency" class="headerlink" title="Maven Dependency"></a>Maven Dependency</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.amazonaws&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aws-java-sdk-sns&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.11.254&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">      </span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-aws-messaging&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.2.RELEASE&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="What-is-SNS"><a href="#What-is-SNS" class="headerlink" title="What is SNS?"></a>What is SNS?</h2><p>Amazon SNS is a publish-subscribe messaging system that allows clients to publish notification to a particular topic. Other interested clients may subscribe using different protocols like HTTP/HTTPS, e-mail or an Amazon SQS queue to receive the messages.</p>
+<p>The next graphic shows a typical example of an Amazon SNS architecture.</p>
+<p><img src="http://cloud.spring.io/spring-cloud-aws/images/sns-overview.png" alt=""><br>Spring Cloud AWS supports Amazon SNS by providing support to send notifications with a <code>NotificationMessagingTemplate</code> and to receive notifications with the HTTP/HTTPS endpoint using the Spring Web MVC <code>@Controller</code> based programming model. Amazon SQS based subscriptions can be used with the annotation-driven message support that is provided by the Spring Cloud AWS messaging module.</p>
+<h2 id="Getting-start"><a href="#Getting-start" class="headerlink" title="Getting start"></a>Getting start</h2><h3 id="Get-A-SNS-Client"><a href="#Get-A-SNS-Client" class="headerlink" title="Get A SNS Client"></a>Get A SNS Client</h3><p>An AmazonSNSClient constructor can use a credentials file called AwsCredentials.properties, which is found on the Java classpath.</p>
+<p>Example: AwsCredentials.properties File Format</p>
+<blockquote>
+<p>accessKey=lDrDjH0D45hQivu6FNlwQ<br>secretKey=bHp5DOjg0HHJrGK7h3ejEqRDnVmWZK03T4lstel6</p>
+</blockquote>
+<p>Creating an SNS Connection using AwsCredentials.properties in the Java Classpath:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AmazonSNS snsClient = AmazonSNSClientBuilder.standard().withCredentials(<span class="keyword">new</span></span><br><span class="line">                ClasspathPropertiesFileCredentialsProvider()).withRegion(Regions.US_EAST_1).build();</span><br></pre></td></tr></table></figure>
+<h3 id="Subscribe-A-Topic-With-HTTP-Endpoint"><a href="#Subscribe-A-Topic-With-HTTP-Endpoint" class="headerlink" title="Subscribe A Topic With HTTP Endpoint"></a>Subscribe A Topic With HTTP Endpoint</h3><p>SNS supports multiple endpoint types (SQS, Email, HTTP, HTTPS), Spring Cloud AWS provides support for HTTP(S) endpoints.<br>To enable an Amazon SNS topic to send messages to an HTTP or HTTPS endpoint, <a href="http://docs.amazonaws.cn/en_us/sns/latest/dg/SendMessageToHttp.html" target="_blank" rel="noopener">follow these steps</a>:</p>
+<p>Step 1: Make sure your endpoint is ready to process Amazon SNS messages</p>
+<p>Step 2: Subscribe the HTTP/HTTPS endpoint to the Amazon SNS topic</p>
+<p>Step 3: Confirm the subscription</p>
+<p>Step 4: Set the delivery retry policy for the subscription (optional)</p>
+<p>Step 5: Give users permissions to publish to the topic (optional)</p>
+<p>Step 6: Send messages to the HTTP/HTTPS endpoint</p>
+<p>SNS sends three type of requests to an HTTP topic listener endpoint, for each of them annotations are provided:</p>
+<ul>
+<li><p>Subscription request → <code>@NotificationSubscriptionMapping</code></p>
+</li>
+<li><p>Notification request → <code>@NotificationMessageMapping</code></p>
+</li>
+<li><p>Unsubscription request → <code>@NotificationUnsubscribeMapping</code></p>
+</li>
+</ul>
+<p>HTTP endpoints are based on Spring MVC controllers. Spring Cloud AWS added some custom argument resolvers to extract the message and subject out of the notification requests.<br>Controller as follow:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * SNS receiver.</span></span><br><span class="line"><span class="comment"> * Author: Gang Zhang</span></span><br><span class="line"><span class="comment"> * Date: 2017/12/27</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/receive/logout"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationReceiveTestController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(NotificationReceiveTestController.class);</span><br><span class="line">    <span class="meta">@NotificationSubscriptionMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleSubscriptionMessage</span><span class="params">(NotificationStatus status)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//We subscribe to start receive the message</span></span><br><span class="line">        status.confirmSubscription();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotificationMessageMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleNotificationMessage</span><span class="params">(@NotificationSubject String subject, @NotificationMessage String message)</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"[SNS http-receiver] Subscribe logout msg: &#123;&#125;"</span>, message);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@NotificationUnsubscribeConfirmationMapping</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleUnsubscribeMessage</span><span class="params">(NotificationStatus status)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//e.g. the client has been unsubscribed and we want to "re-subscribe"</span></span><br><span class="line">        status.confirmSubscription();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>You should config argument resolvers as follow:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSqs</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">awsAutoConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> AmazonSNS <span class="title">amazonSNSClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AmazonSNS snsClient = AmazonSNSClientBuilder.standard().withCredentials(<span class="keyword">new</span></span><br><span class="line">                ClasspathPropertiesFileCredentialsProvider()).withRegion(Regions.US_EAST_1).build();</span><br><span class="line">        <span class="keyword">return</span> snsClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HandlerMethodArgumentResolverComposite <span class="title">snsMethodArgumentResolver</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span>  (HandlerMethodArgumentResolverComposite) NotificationHandlerMethodArgumentResolverConfigurationUtils</span><br><span class="line">                .getNotificationHandlerMethodArgumentResolver(amazonSNSClient());</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Subscribe to the HTTP endpoint:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TOPIC_ARN = <span class="string">"arn:aws:sns:us-east-1:1234576:bo-sns-test-logoutEvent"</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String PROTOCAL = <span class="string">"http"</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ENDPOINT = <span class="string">"http://b1461b00.ngrok.io/demo/receive/logout"</span>;</span><br><span class="line">...</span><br><span class="line">SubscribeRequest subscribeRequest = <span class="keyword">new</span> SubscribeRequest(topicArn, protocol, endpoint);</span><br><span class="line">snsClient.subscribe(subscribeRequest);</span><br><span class="line"><span class="comment">//get request id for SubscribeRequest from SNS metadata</span></span><br><span class="line">LOGGER.info(<span class="string">"SubscribeRequest - "</span> + snsClient.getCachedResponseMetadata(subscribeRequest));</span><br></pre></td></tr></table></figure>
+<h3 id="Publish-Message"><a href="#Publish-Message" class="headerlink" title="Publish Message"></a>Publish Message</h3><p>Publish message using AWS SDK, should use Spring Cloud messaging <code>NotificationMessagingTemplate</code> instead.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> String jsonMsg = <span class="string">"&#123;\n"</span> +</span><br><span class="line">                <span class="string">"  \"username\": \"zhanggang@test.com\",\n"</span> +</span><br><span class="line">                <span class="string">"  \"from\": \"aws sns\"\n"</span> +</span><br><span class="line">                <span class="string">"&#125;"</span>;</span><br><span class="line">PublishRequest publishRequest = <span class="keyword">new</span> PublishRequest(topicArn, jsonMsg, subject);</span><br><span class="line">PublishResult publishResult = snsClient.publish(publishRequest);</span><br><span class="line"><span class="comment">//print MessageId of message published to SNS topic</span></span><br><span class="line">LOGGER.info(<span class="string">"MessageId - "</span> + publishResult.getMessageId());</span><br></pre></td></tr></table></figure>
+<h3 id="Additions"><a href="#Additions" class="headerlink" title="Additions"></a>Additions</h3><p>There are two ways for receiving SQS messages, either use the receive methods of the QueueMessagingTemplate or with annotation-driven listener endpoints. The latter is by far the more convenient way to receive messages.<br>Simply annotate methods with MessageMapping and the QueueMessageHandler will route the messages to the annotated methods.<br>Config MessageHandler bean as follow:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@Lazy</span></span><br><span class="line">    <span class="meta">@Bean</span>(name = <span class="string">"amazonSQS"</span>, destroyMethod = <span class="string">"shutdown"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> AmazonSQSAsync <span class="title">amazonSQSClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        AmazonSQSAsync  awsSQSAsyncClient = <span class="keyword">new</span> AmazonSQSAsyncClient(<span class="keyword">new</span> DefaultAWSCredentialsProviderChain());</span><br><span class="line"></span><br><span class="line">        awsSQSAsyncClient.setRegion(Region.getRegion(Regions.fromName(<span class="string">"us-east-1"</span>)));</span><br><span class="line">        <span class="keyword">return</span> awsSQSAsyncClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SimpleMessageListenerContainerFactory <span class="title">simpleMessageListenerContainerFactory</span><span class="params">(AmazonSQSAsync amazonSqs)</span> </span>&#123;</span><br><span class="line">        SimpleMessageListenerContainerFactory factory = <span class="keyword">new</span> SimpleMessageListenerContainerFactory();</span><br><span class="line">        factory.setAmazonSqs(amazonSqs);</span><br><span class="line">        factory.setMaxNumberOfMessages(<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">return</span> factory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> QueueMessageHandlerFactory <span class="title">queueMessageHandlerFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        QueueMessageHandlerFactory factory = <span class="keyword">new</span> QueueMessageHandlerFactory();</span><br><span class="line">        MappingJackson2MessageConverter messageConverter = <span class="keyword">new</span> MappingJackson2MessageConverter();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//set strict content type match to false</span></span><br><span class="line">        messageConverter.setStrictContentTypeMatch(<span class="keyword">false</span>);</span><br><span class="line">        factory.setArgumentResolvers(Collections.&lt;HandlerMethodArgumentResolver&gt;singletonList(<span class="keyword">new</span> PayloadArgumentResolver(messageConverter)));</span><br><span class="line">        <span class="keyword">return</span> factory;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> QueueMessageHandler <span class="title">queueMessageHandler</span><span class="params">(AmazonSQSAsync amazonSQSAsync,QueueMessageHandlerFactory factory)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        QueueMessageHandlerFactory factory = new QueueMessageHandlerFactory();</span></span><br><span class="line">        factory.setAmazonSqs(amazonSQSAsync);</span><br><span class="line">        <span class="keyword">return</span> factory.createQueueMessageHandler();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SimpleMessageListenerContainer <span class="title">simpleMessageListenerContainer</span><span class="params">(SimpleMessageListenerContainerFactory simpleMessageListenerContainerFactory, QueueMessageHandler queueMessageHandler)</span> </span>&#123;</span><br><span class="line">        SimpleMessageListenerContainer container = simpleMessageListenerContainerFactory.createSimpleMessageListenerContainer();</span><br><span class="line">        container.setMessageHandler(queueMessageHandler);</span><br><span class="line">        container.setWaitTimeOut(<span class="number">20</span>);</span><br><span class="line">        <span class="keyword">return</span> container;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>In this example a queue listener container is started that polls the SQS queueName(<code>bo-test-sns-queue</code>) passed to the MessageMapping annotation. The incoming messages are converted to the target type and then the annotated method queueListener is invoked.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationSqsReceiveTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(NotificationSqsReceiveTest.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@SqsListener</span>(value = <span class="string">"bo-test-sns-queue"</span>, deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sns2SqsListener</span><span class="params">(@Headers Map&lt;String, String&gt; headers, @NotificationMessage String rawJsonMessage)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"[SNS sqs-receiver] Subscribe logout msg in sqs: '&#123;&#125;'"</span>, rawJsonMessage);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Support-With-Fake-sqs-And-Fake-sns"><a href="#Support-With-Fake-sqs-And-Fake-sns" class="headerlink" title="Support With Fake-sqs And Fake-sns"></a>Support With Fake-sqs And Fake-sns</h2><h3 id="Deploy-Fake-Services"><a href="#Deploy-Fake-Services" class="headerlink" title="Deploy Fake Services"></a>Deploy Fake Services</h3><p>We use <a href="https://github.com/s12v/sns" target="_blank" rel="noopener">s12v/sns</a> to deploy local fake sns service , and use <a href="https://github.com/iain/fake_sqs" target="_blank" rel="noopener">iain/fake_sqs</a> to deploy local fake sqs service, and test simple function like: <code>create-topic</code>,<code>create-queue</code>,<code>subscribe</code>, then intergrate with Java sdk to <code>publish</code> event and <code>receive</code> event.</p>
+<ul>
+<li><p>Fake SQS</p>
+<p>  <strong>Installation</strong></p>
+<blockquote>
+<p>gem install fake_sqs</p>
+</blockquote>
+<p>  <strong>Running</strong></p>
+<blockquote>
+<p>fake_sqs –database /path/to/database.yml</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>Fake SNS</p>
+<p>  <strong><a href="https://github.com/s12v/sns#docker" target="_blank" rel="noopener">Docker</a></strong></p>
+<p>  <strong>Jar</strong></p>
+<p>  Download the latest release from <a href="https://github.com/s12v/sns/releases" target="_blank" rel="noopener">https://github.com/s12v/sns/releases</a> and run:</p>
+<blockquote>
+<p>DB_PATH=/tmp/db.json java -jar sns-0.3.7.jar</p>
+</blockquote>
+<p>  Requires Java8.</p>
+</li>
+</ul>
+<h3 id="Create-Topic"><a href="#Create-Topic" class="headerlink" title="Create Topic"></a>Create Topic</h3><p>Create topic:</p>
+<blockquote>
+<p>aws sns –endpoint-url <a href="http://localhost:9911" target="_blank" rel="noopener">http://localhost:9911</a>  create-topic –name bo-sso-logout-local</p>
+<blockquote>
+<p>“TopicArn”: “arn:aws:sns:us-east-1:123456789012:bo-sso-logout-local”</p>
+</blockquote>
+</blockquote>
+<h3 id="Create-Queue"><a href="#Create-Queue" class="headerlink" title="Create Queue"></a>Create Queue</h3><p>Create queue:</p>
+<blockquote>
+<p>aws sqs –endpoint-url <a href="http://localhost:4568" target="_blank" rel="noopener">http://localhost:4568</a> create-queue –queue-name course-sso-logout-queue-local</p>
+</blockquote>
+<p><code>`</code>json<br>“QueueUrls”: [<br>        “<a href="http://localhost:4568/course-sso-logout-queue-local&quot;" target="_blank" rel="noopener">http://localhost:4568/course-sso-logout-queue-local&quot;</a><br>    ]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Get queue arn:</span><br><span class="line">&gt;aws sqs --endpoint-url http://localhost:4568 get-queue-attributes --queue-url http://localhost:4568/course-sso-logout-queue-local --attribute-names All```json	</span><br><span class="line">	&#123;    &quot;Attributes&quot;: &#123;        &quot;ApproximateNumberOfMessagesNotVisible&quot;: &quot;0&quot;,        &quot;ApproximateNumberOfMessages&quot;: &quot;0&quot;,        &quot;QueueArn&quot;: &quot;arn:aws:sqs:us-east-1:06e16ad806a494e8a5841c522a804365:course-sso-logout-queue-local&quot;    	&#125;	&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Subscribe-Sqs"><a href="#Subscribe-Sqs" class="headerlink" title="Subscribe Sqs"></a>Subscribe Sqs</h3><p>Subscribe sns with sqs</p>
+<blockquote>
+<p>aws sns –endpoint-url <a href="http://localhost:9911" target="_blank" rel="noopener">http://localhost:9911</a> subscribe –topic-arn arn:aws:sns:us-east-1:123456789012:bo-sso-logout-local –protocol sqs –notification-endpoint <em>“aws-sqs://course-sso-logout-queue-local?amazonSQSEndpoint=<a href="http://localhost:4568&amp;accessKey=&amp;secretKey=&quot;" target="_blank" rel="noopener">http://localhost:4568&amp;accessKey=&amp;secretKey=&quot;</a></em></p>
+</blockquote>
+<p><code>`</code>json<br>{<br>    “SubscriptionArn”: “arn:aws:sns:us-east-1:123456789012:bo-sso-logout-local:83bf13d8-e7c5-4435-9730-b90e4791b4e0”<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#### Attention</span><br><span class="line">* Aws cli subscribe `--notification-endpoint`  should use [Camel Uri](https://github.com/s12v/sns), refer to [Supported integrations](https://github.com/s12v/sns#supported-integrations).</span><br><span class="line"></span><br><span class="line">### Local Service Config</span><br><span class="line">#### AwsAutoConfig </span><br><span class="line"></span><br><span class="line">Use EndpointConfiguration to config aws client:</span><br><span class="line"></span><br><span class="line">Local fake sns endpoint :`http://localhost:9911`</span><br><span class="line"></span><br><span class="line">Local fake sqs endpoint :`http://localhost:4568`</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">@Configuration</span><br><span class="line">@EnableSqs</span><br><span class="line">public class AwsAutoConfig &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    public AmazonSNS amazonSNSClient() &#123;</span><br><span class="line">        AmazonSNS snsClient = AmazonSNSClientBuilder.standard().withEndpointConfiguration(new AwsClientBuilder</span><br><span class="line">                .EndpointConfiguration(&quot;http://localhost:9911&quot;, Regions.US_EAST_1.getName())).build();</span><br><span class="line">        return snsClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Lazy</span><br><span class="line">    @Bean(name = &quot;amazonSQS&quot;, destroyMethod = &quot;shutdown&quot;)</span><br><span class="line">    public AmazonSQSAsync amazonSQSClient() &#123;</span><br><span class="line">        AmazonSQSAsync awsSQSAsyncClient = AmazonSQSAsyncClientBuilder.standard().withEndpointConfiguration(new</span><br><span class="line">                AwsClientBuilder.EndpointConfiguration(&quot;http://localhost:4568&quot;, Regions.US_EAST_1.getName())).build();</span><br><span class="line">        return awsSQSAsyncClient;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Sqs-listener"><a href="#Sqs-listener" class="headerlink" title="Sqs listener"></a>Sqs listener</h4><p>The SQS queueName(<code>bo-test-sns-queue</code>) should change to local queueUrl(<code>http://localhost:4568/course-sso-logout-queue-local</code>). </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SqsListener</span>(value = <span class="string">"http://localhost:4568/course-sso-logout-queue-local"</span>, deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sns2SqsListener</span><span class="params">(@Headers Map&lt;String, String&gt; headers, @NotificationMessage String rawJsonMessage)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    LOGGER.info(<span class="string">"[SNS sqs-receiver] Subscribe logout msg in sqs: '&#123;&#125;'"</span>, rawJsonMessage);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h4><ul>
+<li>Get Error as follow , but do not affect the subscribe/publish :</li>
+</ul>
+<p><img src="https://github.com/GangZhang/research/blob/Develop-fake-sns-sqs/01%20SNS/images/Sqs%20error.png?raw=true" alt=""></p>
+<p>This is an known issue about fake sqs , can be saw <a href="https://github.com/iain/fake_sqs/issues/40" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>Get SNS DEMO on GitHub <a href="https://github.com/GangZhang/research/tree/master/01%20SNS" target="_blank" rel="noopener">Here&hearts;</a></p>
+<p>Support with fake-sns &amp; fake-sqs DEMO <a href="https://github.com/GangZhang/research/tree/Develop-fake-sns-sqs/01%20SNS" target="_blank" rel="noopener">Here&spades;</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1] <a href="http://cloud.spring.io/spring-cloud-aws/spring-cloud-aws.html#_receiving_a_message" target="_blank" rel="noopener">http://cloud.spring.io/spring-cloud-aws/spring-cloud-aws.html</a></p>
+<p>[2] <a href="https://www.ibm.com/support/knowledgecenter/STXNRM_3.11.1/coss.doc/aws_java_c_cred_file.html" target="_blank" rel="noopener">Credentials set in AwsCredentials.properties file</a></p>
+<p>[3] <a href="https://docs.aws.amazon.com/cli/latest/reference/sqs/index.html#cli-aws-sqs" target="_blank" rel="noopener">Amazon Simple Queue Service API Reference</a></p>
+<p>[4] <a href="https://docs.aws.amazon.com/cli/latest/reference/sns/index.html#cli-aws-sns" target="_blank" rel="noopener">Amazon Simple Notification Service API Reference</a></p>
+<p>[5] <a href="https://github.com/s12v/sns" target="_blank" rel="noopener">Fake sns</a></p>
+<p>[6] <a href="https://github.com/iain/fake_sqs" target="_blank" rel="noopener">Fake sqs</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-2018-01-11-JavaDoc" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/03/26/2018-01-11-JavaDoc/" class="article-date">
+  <time datetime="2018-03-25T16:45:52.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">Gang Zhang</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2018/03/26/2018-01-11-JavaDoc/">Java doc</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h2 id="1-File-Header"><a href="#1-File-Header" class="headerlink" title="1. File Header"></a>1. File Header</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Created by IntelliJ IDEA.</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span>: $&#123;USER&#125;</span></span><br><span class="line"><span class="comment">* <span class="doctag">@date</span>: $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment">* <span class="doctag">@since</span>:</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-Field-Comment"><a href="#2-Field-Comment" class="headerlink" title="2.Field Comment"></a>2.Field Comment</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Parameter for the consumer key.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">oauth_consumer_key,</span><br></pre></td></tr></table></figure>
+<h2 id="3-Function-Comment"><a href="#3-Function-Comment" class="headerlink" title="3. Function Comment"></a>3. Function Comment</h2><p>Create javadoc by IDEA(Option+Shift+G)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Verify the specified signature on the given signature base string.</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> signatureBaseString The signature base string.</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> signature The signature.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">verify</span><span class="params">(String signatureBaseString, String signature)</span> <span class="keyword">throws</span> InvalidSignatureException</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="4-Commit-Template"><a href="#4-Commit-Template" class="headerlink" title="4.Commit Template"></a>4.Commit Template</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Feature [&#123;IssueId&#125;] - This is an new feature</span><br><span class="line">Fix [&#123;IssueId&#125;] - This is a bug fix</span><br><span class="line">Improvement [&#123;IssueId&#125;] - This is an improvement</span><br><span class="line">Release [&#123;IssueId&#125;] - This is to release an new version</span><br></pre></td></tr></table></figure>
+<p><code>$ git config --global commit.template ~/.git_commit_template</code></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-2018-03-05-单元测试之Mock框架对比" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/03/26/2018-03-05-单元测试之Mock框架对比/" class="article-date">
+  <time datetime="2018-03-25T16:45:52.000Z" itemprop="datePublished">2018-03-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">Gang Zhang</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2018/03/26/2018-03-05-单元测试之Mock框架对比/">单元测试之Mock框架对比</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在开发过程中，UT是必不可少的一环，无论是功能的验证，还是统计覆盖率，或者是增加代码可维护性（利于重构后的功能验证），UT都发挥其作用。在写UT时，mock是必须要有的，下面对当前主流的几个Java代码Mock框架做简单介绍，便于不通需求下的选择。</p>
+<h2 id="Mock-框架"><a href="#Mock-框架" class="headerlink" title="Mock 框架"></a>Mock 框架</h2><h3 id="框架对比"><a href="#框架对比" class="headerlink" title="框架对比"></a>框架对比</h3><p>Mock Toolkit有许多，比较常见的有EasyMock, Jmock和JMockit等等，到底选哪个呢，Jmockit的官网上有个特性对比列表，很详细：<br><img src="https://github.com/GangZhang/gangzhang.github.io/blob/master/images/Mock%20features.png?raw=true" alt="Features对比图"></p>
+<p>我们先写一个简单的测试类，以下Mock都基于该测试类进行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MockClazz</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">run</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">" begin run..."</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">sleep</span> <span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">" begin sleep..."</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">eat</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">" begin eat..."</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEatInfo</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> eat(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> String <span class="title">create</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-easymock"><a href="#1-easymock" class="headerlink" title="1.easymock"></a>1.easymock</h4><p>easymock是比较早的一个mock框架，做一次mock需要先创建一个mock对象，然后录制mock代码，把mock对象切换到播放状态，执行单元测试，最后再验证mock对象是否按照录制的mock行为执行。<br>引入easymock的依赖:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.easymock<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>easymock<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>编写mock代码，分为五个步骤:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 创建mock对象</span></span><br><span class="line">MockClazz mockClazz = EasyMock.createMock(MockClazz.class);</span><br><span class="line"><span class="comment">//2. 录制mock对象的预期行为和输出</span></span><br><span class="line">EasyMock.expect(mockClazz.run(EasyMock.anyString())).andReturn(<span class="string">"mocked string for run"</span>);</span><br><span class="line"><span class="comment">//3. 将mock对象切换到播放状态</span></span><br><span class="line">EasyMock.replay(mockClazz);</span><br><span class="line"><span class="comment">//4. 调用mock对象方法进行测试</span></span><br><span class="line">String actualString = mockClazz.run(<span class="string">"name"</span>);</span><br><span class="line">Assert.assertEquals(<span class="string">"mocked string for run"</span>, actualString);</span><br><span class="line"><span class="comment">//5. 对mock对象的行为进行验证,验证mock的对象是否按照录制的行为发生</span></span><br><span class="line">EasyMock.verify(mockClazz);</span><br><span class="line"></span><br><span class="line">String eatInfo = mockClazz.getEatInfo(<span class="string">"aa"</span>);</span><br><span class="line">System.out.println(eatInfo);</span><br></pre></td></tr></table></figure>
+<p>这样我们就使用easymock完成了一个对象的mock测试。<br>在上面的例子中，我们只mock了run这个方法，那没有被mock的方法，在调用的时候会出现什么问题？</p>
+<p>其中，<code>getEatInfo</code>代码在被执行时，会抛出如下异常：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.AssertionError:</span><br><span class="line">Unexpected method call MockClazz.getEatInfo(“aa”):</span><br><span class="line">at org.easymock.internal.MockInvocationHandler.invoke(MockInvocationHandler.java:<span class="number">44</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>可见easymock如果其中一个方法没有被mock但是被调用了，就会抛异常。</p>
+<p>easymock<strong>不支持private,final,static等方法的mock</strong>。</p>
+<h4 id="2-mockito"><a href="#2-mockito" class="headerlink" title="2.mockito"></a>2.mockito</h4><p>mockito是在easymock之后出现的，相对于easymock来说，mockito少了对象状态切换这一步骤。<br>引入mockito的依赖：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">     &lt;groupId&gt;org.mockito&lt;/groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;mockito-all&lt;/artifactId&gt;</span><br><span class="line">     &lt;version&gt;2.0.2-beta&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>编写mockito的mock代码，分四个步骤:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 创建mock对象</span></span><br><span class="line">MockClazz mockClazz = Mockito.mock(MockClazz.class);</span><br><span class="line"><span class="comment">//2. 录制mock代码</span></span><br><span class="line">Mockito.when(mockClazz.run(<span class="string">"A"</span>)).thenReturn(<span class="string">"B"</span>);</span><br><span class="line"><span class="comment">//3. 执行单元测试</span></span><br><span class="line">String actual = mockClazz.run(<span class="string">"A"</span>);</span><br><span class="line">Assert.assertEquals(actual, <span class="string">"B"</span>);</span><br><span class="line"><span class="comment">//4. 校验mock对象的行为是否按照mock执行</span></span><br><span class="line">Mockito.verify(mockClazz).run(<span class="string">"A"</span>);</span><br><span class="line"></span><br><span class="line">String eatInfo = mockClazz.getEatInfo(<span class="string">"aa"</span>);</span><br><span class="line">System.out.println(eatInfo);</span><br></pre></td></tr></table></figure>
+<p>和easymock相比，mockito少了一个环节，就是把对象切换到播放状态。<br>上面的代码中我们mock了run方法，但是<code>getEatInfo</code>方法没有被mock,调用这个方法会出现什么问题?</p>
+<p>此时返回null，按照mockito的官方文档，没有被mock的方法返回默认值，具体可以看mockito的官方文档。<br>那么mockito如何保证不被mock的代码按照原来的逻辑输出呢？</p>
+<blockquote>
+<ul>
+<li>通过doCallRealMethodl来实现:</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MockClazz mockClazz = Mockito.mock(MockClazz.class);</span><br><span class="line">Mockito.doCallRealMethod().when(mockClazz).run(<span class="string">"A"</span>);</span><br><span class="line">String actual = mockClazz.run(<span class="string">"A"</span>);</span><br><span class="line"><span class="comment">// A begin run... 原样执行</span></span><br><span class="line">System.out.println(actual);</span><br><span class="line"></span><br><span class="line"><span class="comment">// null 返回默认值</span></span><br><span class="line">System.out.println(mockClazz.run(<span class="string">"B"</span>));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>通过spy来实现</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意这里需要new一个</span></span><br><span class="line">MockClazz mockClazz = Mockito.spy(<span class="keyword">new</span> MockClazz());</span><br><span class="line">Mockito.when(mockClazz.run(<span class="string">"A"</span>)).thenReturn(<span class="string">"B"</span>);</span><br><span class="line"></span><br><span class="line">String actual = mockClazz.run(<span class="string">"C"</span>);</span><br><span class="line"><span class="comment">// 输出[C begin run...],原样输出忽略mock逻辑</span></span><br><span class="line">System.out.println(actual);</span><br></pre></td></tr></table></figure>
+<p>此时mockClazz.run(“C”)直接按照原来的代码执行，忽略mock逻辑。<br>在使用spy的时候需要注意一个点，看下面两段代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MockClazz mockClazz = Mockito.spy(<span class="keyword">new</span> MockClazz());</span><br><span class="line">Mockito.when(mockClazz.run(<span class="string">"A"</span>)).thenReturn(<span class="string">"B"</span>);</span><br><span class="line"><span class="comment">// 实际执行run的代码,只是修改返回值（先输出A,再返回B)</span></span><br><span class="line">System.out.println(mockClazz.run(<span class="string">"A"</span>));</span><br></pre></td></tr></table></figure>
+<p>这段代码只是修改了返回值，实际代码逻辑被执行了，也就是说这种mock逻辑只是mock了返回值，类似SpringAOP在方法返回的时候拦截一下修改了返回值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MockClazz mockClazz = Mockito.spy(<span class="keyword">new</span> MockClazz());</span><br><span class="line">Mockito.doReturn(<span class="string">"B"</span>).when(mockClazz).run(<span class="string">"C"</span>);</span><br><span class="line"><span class="comment">// 根本不执行run的代码,直接返回</span></span><br><span class="line">System.out.println(mockClazz.run(<span class="string">"C"</span>));</span><br></pre></td></tr></table></figure>
+<p>这段代码不仅该了返回值，同时也真正的代码一行也不会执行。</p>
+<blockquote>
+<p>注意这两种写法的微妙区别</p>
+</blockquote>
+<p>Mockito.doReturn(“B”).when(mockClazz).run(“C”);<br>Mockito.when(mockClazz.run(“A”)).thenReturn(“B”);</p>
+<p>mockito<strong>不支持private,final,static等方法的mock</strong>。</p>
+<h4 id="3-powermock"><a href="#3-powermock" class="headerlink" title="3.powermock"></a>3.powermock</h4><p>powermock实在easymock和mockito的基础上扩展而来的，easymock和mockito不能解决private,final,static等方法的mock，powermock为此提供了解决方案。powermock需要和easymock或者mockito配合起来一起使用。</p>
+<p>引入依赖:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.powermock<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>powermock-api-mockito<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.powermock<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>powermock-module-junit4<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(PowerMockRunner.class)</span><br><span class="line"><span class="meta">@PrepareForTest</span>( &#123; MockClazz.class &#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MockTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMockStatic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 静态方法的mock</span></span><br><span class="line">        PowerMockito.mockStatic(MockClazz.class);</span><br><span class="line">        PowerMockito.when(MockClazz.sleep(<span class="string">"A"</span>)).thenReturn(<span class="string">"B"</span>);</span><br><span class="line">        System.out.println(MockClazz.sleep(<span class="string">"A"</span>));</span><br><span class="line">        PowerMockito.verifyStatic();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMockPrivate</span><span class="params">()</span> <span class="keyword">throws</span>  Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 私有方法的mock,getEatInfo=&gt;eat,eat是私有方法</span></span><br><span class="line">        MockClazz mockClazz = PowerMockito.mock(MockClazz.class);</span><br><span class="line">        PowerMockito.when(mockClazz, <span class="string">"eat"</span>, <span class="string">"A"</span>).thenReturn(<span class="string">"mock"</span>);</span><br><span class="line">        PowerMockito.doCallRealMethod().when(mockClazz).getEatInfo(<span class="string">"A"</span>);</span><br><span class="line">        System.out.println(mockClazz.getEatInfo(<span class="string">"A"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMockFinal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// final方法的mock</span></span><br><span class="line">        MockClazz mockClazz = PowerMockito.mock(MockClazz.class);</span><br><span class="line">        PowerMockito.when(mockClazz.create(<span class="string">"A"</span>)).thenReturn(<span class="string">"B"</span>);</span><br><span class="line">        System.out.println(mockClazz.create(<span class="string">"A"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="jmockit"><a href="#jmockit" class="headerlink" title="jmockit"></a>jmockit</h4><p>jmockit是一个轻量级的mock框架，内部采用ASM来修改字节码。</p>
+<p>引入依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.googlecode.jmockit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jmockit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>具体mock的代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith</span>(JMockit.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MockTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Mocked</span></span><br><span class="line">    MockClazz mockClazz = <span class="keyword">new</span> MockClazz();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testExpectations</span><span class="params">()</span> </span>&#123; <span class="comment">// 全局mock抛异常</span></span><br><span class="line">        <span class="keyword">new</span> Expectations() &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                mockClazz.getEatInfo(<span class="string">"A"</span>);</span><br><span class="line">                returns(<span class="string">"B"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 被mock的方法,返回mock后的值</span></span><br><span class="line">        System.out.println(mockClazz.getEatInfo(<span class="string">"A"</span>));</span><br><span class="line">        <span class="comment">// 没有被mock的方法,mockit.internal.UnexpectedInvocation,jmocit对run没有进行mock</span></span><br><span class="line">        System.out.println(mockClazz.run(<span class="string">"A"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testNonExpectations</span><span class="params">()</span> </span>&#123; <span class="comment">//全局mock返回缺省值</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> NonStrictExpectations() &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                mockClazz.getEatInfo(<span class="string">"A"</span>);</span><br><span class="line">                returns(<span class="string">"B"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 被mock的方法,返回mock后的值</span></span><br><span class="line">        System.out.println(mockClazz.getEatInfo(<span class="string">"A"</span>));</span><br><span class="line">        <span class="comment">// 没有被mock的方法,返回默认值,jmockit对run方法也进行了mock</span></span><br><span class="line">        System.out.println(mockClazz.run(<span class="string">"A"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMockStatic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// mock静态方法</span></span><br><span class="line">        <span class="keyword">new</span> NonStrictExpectations() &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                MockClazz.sleep(<span class="string">"A"</span>);</span><br><span class="line"><span class="comment">//                result = "B";</span></span><br><span class="line">                returns(<span class="string">"B"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        System.out.println(MockClazz.sleep(<span class="string">"A"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMockPrivate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> MockClazz obj = <span class="keyword">new</span> MockClazz();</span><br><span class="line">        <span class="keyword">new</span> NonStrictExpectations(obj) &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 私有方法mock</span></span><br><span class="line">                <span class="keyword">this</span>.invoke(obj, <span class="string">"eat"</span>, <span class="string">"A"</span>);</span><br><span class="line">                returns(<span class="string">"B"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 私有方法被mock了</span></span><br><span class="line">        System.out.println(obj.getEatInfo(<span class="string">"A"</span>));</span><br><span class="line">        <span class="comment">// run方法不会被mock,走真实逻辑</span></span><br><span class="line">        System.out.println(obj.run(<span class="string">"A"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<p>1.NonStrictExpectations返回缺省值针对没有mock的方法</p>
+<p>2.Expectations针对没有mock的方法直接抛异常</p>
+</blockquote>
+<h2 id="spring-boot-test"><a href="#spring-boot-test" class="headerlink" title="spring-boot-test"></a>spring-boot-test</h2><p>T.B.C.</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="http://yangbolin.cn/2016/07/17/java-ut-mock-framework/" target="_blank" rel="noopener">Java 单元测试mock框架</a></p>
+<p>[2] <a href="https://thepracticaldeveloper.com/2017/07/31/guide-spring-boot-controller-tests/" target="_blank" rel="noopener">GUIDE TO TESTING CONTROLLERS IN SPRING BOOT</a></p>
+<p>[3] <a href="http://jmockit.cn/" target="_blank" rel="noopener">jmockit中文社区</a></p>
+<p>[4] <a href="http://blog.csdn.net/zero__007/article/details/49280827" target="_blank" rel="noopener">jmockit简单使用</a></p>
+<p>[5] <a href="http://easymock.org/user-guide.html" target="_blank" rel="noopener">easymock doc</a></p>
+<p>[6] <a href="https://github.com/powermock/powermock" target="_blank" rel="noopener">power mock</a></p>
+<p>[7] <a href="http://billben.iteye.com/blog/1872196" target="_blank" rel="noopener">Mock框架对比</a></p>
+<p>[8] <a href="https://thepracticaldeveloper.com/2017/07/31/guide-spring-boot-controller-tests/" target="_blank" rel="noopener">Spring boot controller test</a></p>
+<p>[9] <a href="https://dzone.com/articles/java-redis-mock" target="_blank" rel="noopener">redis mock</a></p>
 
     
 	</div>
