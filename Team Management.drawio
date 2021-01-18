@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-18T05:53:35.520Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 Edg/80.0.361.69" etag="ayQ2YowhjDavd7vrxxBZ" version="14.1.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-18T05:55:48.691Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 Edg/80.0.361.69" etag="iZZT8C9qgGsIemjPHz7-" version="14.1.8" type="github">
   <diagram id="DcKS1gWii1AMZDfLGtgn" name="Page-1">
-    <mxGraphModel dx="1426" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2253" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,7 +12,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-22" value="Update User&#39;s Company" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-15">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-22" value="5. Update User&#39;s Company" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-15">
           <mxGeometry x="-0.16" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -25,7 +25,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-24" value="Reindex ALL" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-23">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-24" value="6. Reindex ALL" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-23">
           <mxGeometry x="-0.24" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -53,7 +53,7 @@
             <mxPoint x="975" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-8" value="Group/Group Member APIs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="GiRHvkRfX_-VjHIujBZW-26">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-8" value="2. Group/Group Member APIs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="GiRHvkRfX_-VjHIujBZW-26">
           <mxGeometry x="0.02" y="3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -70,7 +70,7 @@
         <mxCell id="yAAUwjmU2Erdggg3t-V5-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;" edge="1" parent="1" source="GiRHvkRfX_-VjHIujBZW-15" target="yAAUwjmU2Erdggg3t-V5-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-16" value="Create/Update/Delete Index Item" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-12">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-16" value="3. Create/Update/Delete Index Item" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-12">
           <mxGeometry x="-0.2111" y="4" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -89,7 +89,7 @@
             <mxPoint x="75" y="930" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-21" value="Update ES Indexes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-19">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-21" value="7. Update ES Indexes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-19">
           <mxGeometry x="-0.125" y="4" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -103,7 +103,7 @@
             <mxPoint x="560" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-7" value="Group/Group Member APIs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-6">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-7" value="1. Group/Group Member APIs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-6">
           <mxGeometry x="-0.02" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -120,7 +120,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="yAAUwjmU2Erdggg3t-V5-18" value="Consumer Index Events" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-17">
+        <mxCell id="yAAUwjmU2Erdggg3t-V5-18" value="4. Consumer Index Events" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="yAAUwjmU2Erdggg3t-V5-17">
           <mxGeometry x="0.1973" y="-2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
