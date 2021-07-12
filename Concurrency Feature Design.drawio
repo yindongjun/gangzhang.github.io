@@ -1,14 +1,14 @@
-<mxfile modified="2021-07-12T10:18:58.528Z" host="app.diagrams.net" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63" etag="qznXGJgCeUssnmdMgyIb" version="14.8.5" type="github">
+<mxfile modified="2021-07-12T10:20:40.069Z" host="app.diagrams.net" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63" etag="gixIf1ViBejuR3-Ce0xK" version="14.8.5" type="github">
   <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
     <mxGraphModel dx="1399" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="1Op8A7p5LswZUNTb8-j7-78" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;comic=1;gradientColor=#ffffff;arcSize=0;dashed=1;" parent="1" vertex="1">
-          <mxGeometry x="285" y="840" width="1022.5" height="270" as="geometry" />
+          <mxGeometry x="285" y="840" width="1095" height="270" as="geometry" />
         </mxCell>
         <mxCell id="1Op8A7p5LswZUNTb8-j7-79" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;comic=1;gradientColor=#ffffff;arcSize=0;dashed=1;" parent="1" vertex="1">
-          <mxGeometry x="285" y="630" width="1022.5" height="200" as="geometry" />
+          <mxGeometry x="285" y="630" width="1095" height="200" as="geometry" />
         </mxCell>
         <mxCell id="1Op8A7p5LswZUNTb8-j7-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="1Op8A7p5LswZUNTb8-j7-81" target="1Op8A7p5LswZUNTb8-j7-83" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -94,8 +94,8 @@
         <mxCell id="1Op8A7p5LswZUNTb8-j7-103" value="key:IDENTITY:SSO:SESSION_EXPIRING_ID_SET,&lt;br&gt;value:sessionId, score: expiredAt" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="987.5" y="733" width="290" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Op8A7p5LswZUNTb8-j7-104" value="key:PREFIX_supper_companyId_accountId,&lt;br&gt;value:sessionId Set" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="991" y="781" width="250" height="30" as="geometry" />
+        <mxCell id="1Op8A7p5LswZUNTb8-j7-104" value="key:IDENTITY:SSO:SESSION_IDS_BY_IDENTIFIER_SET_{identifier},&lt;br&gt;value:sessionId Set" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="987.5" y="781" width="390" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1Op8A7p5LswZUNTb8-j7-105" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1Op8A7p5LswZUNTb8-j7-111" target="1Op8A7p5LswZUNTb8-j7-112" edge="1">
           <mxGeometry relative="1" as="geometry" />
