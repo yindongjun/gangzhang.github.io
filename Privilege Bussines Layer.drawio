@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-31T08:38:09.054Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="Qlaw8gxB69HZVnYjmfiU" version="14.8.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-31T08:43:36.768Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="hKoD_idpBOysf-WxStwl" version="14.8.5" type="github" pages="2">
   <diagram id="ha3NaFHCnZJ82upUzwdx" name="Privilege">
     <mxGraphModel dx="1799" dy="656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -410,6 +410,17 @@
         </mxCell>
         <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-77" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_Browser_webpage_website_web_page-128.png" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
           <mxGeometry x="360" y="970" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-78" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="795" as="sourcePoint" />
+            <mxPoint x="910.5" y="795" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-79" value="显示权限列表" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="VEWR9VQ0BqVSCsnpz4Ri-78">
+          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
+            <mxPoint y="-24" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
