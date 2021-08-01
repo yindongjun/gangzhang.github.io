@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-08-01T08:15:21.760Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="OW5cIKG666pmo0vsF-LI" version="14.9.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-08-01T08:16:40.417Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="0AR-Rb6WtcE-3kaX8tQl" version="14.9.3" type="github" pages="3">
   <diagram id="ha3NaFHCnZJ82upUzwdx" name="Privilege">
     <mxGraphModel dx="1750" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -161,7 +161,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8Ztrja5mllns9veJtsKz" name="Company Privilege Contract">
-    <mxGraphModel dx="923" dy="1792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="923" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="rPtY3Esqq6ZF7neWnj23-0" />
         <mxCell id="rPtY3Esqq6ZF7neWnj23-1" parent="rPtY3Esqq6ZF7neWnj23-0" />
@@ -381,12 +381,12 @@
           <mxGeometry x="650" y="765" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-70" value="" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.tenant_admin;" parent="rPtY3Esqq6ZF7neWnj23-1" vertex="1">
-          <mxGeometry x="100" y="20" width="56" height="58" as="geometry" />
+          <mxGeometry x="400" y="40" width="56" height="58" as="geometry" />
         </mxCell>
         <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-71" value="" style="shape=flexArrow;endArrow=classic;html=1;" parent="rPtY3Esqq6ZF7neWnj23-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="118.5" y="913" as="sourcePoint" />
-            <mxPoint x="118.5" y="963" as="targetPoint" />
+            <mxPoint x="423.5" y="889" as="sourcePoint" />
+            <mxPoint x="423.5" y="939" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-72" value="显示权限列表" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="VEWR9VQ0BqVSCsnpz4Ri-71" vertex="1" connectable="0">
@@ -396,10 +396,10 @@
         </mxCell>
         <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-75" value="" style="shape=flexArrow;endArrow=classic;html=1;" parent="rPtY3Esqq6ZF7neWnj23-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="119" y="116" as="sourcePoint" />
-            <mxPoint x="119" y="166" as="targetPoint" />
+            <mxPoint x="419" y="136" as="sourcePoint" />
+            <mxPoint x="419" y="186" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="119" y="116" />
+              <mxPoint x="419" y="136" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -409,137 +409,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="VEWR9VQ0BqVSCsnpz4Ri-77" value="Backoffice" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_Browser_webpage_website_web_page-128.png" parent="rPtY3Esqq6ZF7neWnj23-1" vertex="1">
-          <mxGeometry x="60" y="970" width="120" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-0" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="402" y="46" as="sourcePoint" />
-            <mxPoint x="402" y="96" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="402" y="46" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-1" value="分配账号权限" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vOU--F_vYVtXkMj1Q3i2-0">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint y="-24" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-2" value="" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.tenant_admin;" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="377" y="-50" width="56" height="58" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-3" value="Account Privilege" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="169.5" y="100" width="500.5" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-4" value="" style="endArrow=none;dashed=1;html=1;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ea6b66;strokeWidth=2;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="320" y="850" as="sourcePoint" />
-            <mxPoint x="320" y="260" as="targetPoint" />
-          </mxGeometry>
+          <mxGeometry x="365" y="946" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="vOU--F_vYVtXkMj1Q3i2-5" value="&lt;font color=&quot;#ea6b66&quot;&gt;Now&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
           <mxGeometry x="300" y="240" width="40" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-7" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;rotation=-90;" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="324" y="850" width="20" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-9" value="" style="shape=flexArrow;endArrow=classic;html=1;dashed=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="401.5" y="145" as="sourcePoint" />
-            <mxPoint x="401.5" y="195" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="401.5" y="145" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-11" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="320" y="170" as="sourcePoint" />
-            <mxPoint x="320" y="260" as="targetPoint" />
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-12" value="基于计算后的公司权限" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vOU--F_vYVtXkMj1Q3i2-11">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint y="-39" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-14" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="304" y="920" as="sourcePoint" />
-            <mxPoint x="304" y="970" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-15" value="分配权限到账号" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vOU--F_vYVtXkMj1Q3i2-14">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint x="45" y="5" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-16" value="当前有效的权限及限制" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="274" y="875" width="376" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-18" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="584.5" y="50" as="sourcePoint" />
-            <mxPoint x="584.5" y="100" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="584.5" y="50" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-19" value="用户访问认证" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vOU--F_vYVtXkMj1Q3i2-18">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint x="-4" y="-105" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-20" value="" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.account_portal" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="286" y="1005" width="43" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-21" value="" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.account_portal" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="560" y="-110" width="43" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-22" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="583" y="910" as="sourcePoint" />
-            <mxPoint x="583" y="950" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-23" value="权限降解为产品角色" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vOU--F_vYVtXkMj1Q3i2-22">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint x="72" y="-5" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="vOU--F_vYVtXkMj1Q3i2-24" value="Product Roles" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="525" y="950" width="118" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="n2Yp3QxezoLiVekwfopC-0" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="582" y="-27" as="sourcePoint" />
-            <mxPoint x="582" y="23" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="582" y="-27" />
-              <mxPoint x="582" y="3" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="n2Yp3QxezoLiVekwfopC-1" value="鉴权" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="n2Yp3QxezoLiVekwfopC-0">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint x="-1" y="52" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="n2Yp3QxezoLiVekwfopC-2" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="585" y="986" as="sourcePoint" />
-            <mxPoint x="585" y="1026" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="n2Yp3QxezoLiVekwfopC-3" value="认证信息(Token/Session)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="n2Yp3QxezoLiVekwfopC-2">
-          <mxGeometry x="-0.4" y="1" relative="1" as="geometry">
-            <mxPoint x="84" y="7" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="n2Yp3QxezoLiVekwfopC-4" value="Product Web" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_Browser_webpage_website_web_page-128.png" vertex="1" parent="rPtY3Esqq6ZF7neWnj23-1">
-          <mxGeometry x="530" y="1010" width="120" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
