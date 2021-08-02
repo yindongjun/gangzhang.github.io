@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-08-02T01:20:41.657Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="HvZQ05T_HQajV-AebVDW" version="14.9.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-08-02T09:48:55.201Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="kl-rWbDj0MfrD8HxBrpi" version="14.9.3" type="github" pages="4">
   <diagram id="ha3NaFHCnZJ82upUzwdx" name="Privilege">
     <mxGraphModel dx="1750" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -161,7 +161,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8Ztrja5mllns9veJtsKz" name="Company Privilege Contract">
-    <mxGraphModel dx="923" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="rPtY3Esqq6ZF7neWnj23-0" />
         <mxCell id="rPtY3Esqq6ZF7neWnj23-1" parent="rPtY3Esqq6ZF7neWnj23-0" />
@@ -415,7 +415,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="NZd4BT_6fFzJ1ZvdEOsN" name="Account Privilege">
-    <mxGraphModel dx="923" dy="1792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1186" dy="1942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="tLa-VPnon1NBA1NG0WTK-0" />
         <mxCell id="tLa-VPnon1NBA1NG0WTK-1" parent="tLa-VPnon1NBA1NG0WTK-0" />
@@ -795,6 +795,14 @@
         <mxCell id="Fye7kP6N05jQkHwVv3qJ-92" value="Product Web" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/internet-security-flat-2/32/Internet_Security_Browser_webpage_website_web_page-128.png" parent="tLa-VPnon1NBA1NG0WTK-1" vertex="1">
           <mxGeometry x="530" y="1010" width="120" height="120" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="GAOiyk5_NxN3IsM_cz4m" name="Seats Limitation">
+    <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="84Oxu0IS9k6_sD-mDVJ5-0" />
+        <mxCell id="84Oxu0IS9k6_sD-mDVJ5-1" parent="84Oxu0IS9k6_sD-mDVJ5-0" />
       </root>
     </mxGraphModel>
   </diagram>
