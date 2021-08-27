@@ -1,11 +1,14 @@
-<mxfile host="app.diagrams.net" modified="2021-08-27T07:58:20.659Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="TtwRMhA6i0ujuXerJdKf" version="14.9.8" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-08-27T08:00:40.988Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67" etag="8g1XZw0yiOUAqWTcxgZ5" version="14.9.8" type="github" pages="2">
   <diagram id="57MoJGxeWKh6ITYG6xSH" name="Single Mode">
     <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Wp5I3NV40LdnIwaihpd1-28" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Wp5I3NV40LdnIwaihpd1-6" target="Wp5I3NV40LdnIwaihpd1-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Wp5I3NV40LdnIwaihpd1-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="107" y="435" width="260" height="70" as="geometry" />
+          <mxGeometry x="107" y="435" width="263" height="75" as="geometry" />
         </mxCell>
         <mxCell id="Wp5I3NV40LdnIwaihpd1-2" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elasticache;fillColor=#2E73B8;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="213.25" y="505" width="47.5" height="51" as="geometry" />
@@ -25,8 +28,14 @@
         <mxCell id="Wp5I3NV40LdnIwaihpd1-11" value="Primary Endpoint" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="117" y="405" width="110" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="Wp5I3NV40LdnIwaihpd1-30" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="301" y="438" as="sourcePoint" />
+            <mxPoint x="301" y="458" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="Wp5I3NV40LdnIwaihpd1-12" value="Reader Endpoint" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="247" y="405" width="110" height="30" as="geometry" />
+          <mxGeometry x="250" y="405" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Wp5I3NV40LdnIwaihpd1-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Wp5I3NV40LdnIwaihpd1-13" target="Wp5I3NV40LdnIwaihpd1-11">
           <mxGeometry relative="1" as="geometry">
