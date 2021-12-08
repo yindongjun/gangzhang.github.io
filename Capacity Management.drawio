@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-08T02:33:24.785Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43" etag="fpREDZA40nUDPPKpAvLu" version="15.9.1" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-12-08T02:37:50.723Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43" etag="MbA2V89xzsGl92C5d47J" version="15.9.1" type="github" pages="6">
   <diagram id="1wXUoBC2yg0flkBptSx7" name="Performance Limitation Total">
     <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2389,6 +2389,13 @@
         </mxCell>
         <mxCell id="NQUguTBhrK_MwzDgAGJt-9" value="&lt;font face=&quot;comic sans ms&quot;&gt;关联itemId，插入detail表&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#FFFFFF;strokeColor=#82b366;" parent="S-DQ9gvUv9Vcxfogamg8-1" vertex="1">
           <mxGeometry x="270" y="634" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="d9DZqIDM2S6PuheEobxy-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;sketch=1;" edge="1" parent="S-DQ9gvUv9Vcxfogamg8-1" source="NQUguTBhrK_MwzDgAGJt-10" target="NQUguTBhrK_MwzDgAGJt-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="649" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="NQUguTBhrK_MwzDgAGJt-10" value="&lt;span style=&quot;font-family: &amp;#34;comic sans ms&amp;#34;&quot;&gt;创建ItemId记录，complete=false&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#FFFFFF;strokeColor=#82b366;" parent="S-DQ9gvUv9Vcxfogamg8-1" vertex="1">
           <mxGeometry x="83" y="563" width="160" height="30" as="geometry" />
