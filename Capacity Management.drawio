@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-12-08T02:37:50.723Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43" etag="MbA2V89xzsGl92C5d47J" version="15.9.1" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-12-26T07:08:45.865Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43" etag="L4cNTHaznw1uUzYBRnY1" version="16.0.3" type="github" pages="7">
   <diagram id="1wXUoBC2yg0flkBptSx7" name="Performance Limitation Total">
-    <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="918" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1479,7 +1479,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="qrFW_TEojtJ9fblTUbgL" name="Capacity Usage">
-    <mxGraphModel dx="566" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="91" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="pRoewP3uBIQJJ_c13_4N-0" />
         <mxCell id="pRoewP3uBIQJJ_c13_4N-1" parent="pRoewP3uBIQJJ_c13_4N-0" />
@@ -2692,6 +2692,68 @@
         </mxCell>
         <mxCell id="lWt3HuBIRBrBx0uL_wM7-15" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;获取&lt;/font&gt;&lt;span style=&quot;font-family: &amp;#34;comic sans ms&amp;#34;&quot;&gt;AtomicLong中的值&lt;/span&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#FFFFFF;strokeColor=#82b366;" parent="S-DQ9gvUv9Vcxfogamg8-1" vertex="1">
           <mxGeometry x="970" y="477" width="160" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="WPSltS3X6FdtK3VoJWbU" name="Capacity Check">
+    <mxGraphModel dx="918" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="t6xbt6aNctxhQw9j027M-0" />
+        <mxCell id="t6xbt6aNctxhQw9j027M-1" parent="t6xbt6aNctxhQw9j027M-0" />
+        <mxCell id="c1qJRLCpccET18l-roq6-4" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#97D077;sketch=1;fontFamily=Comic Sans MS;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="157.25" y="250" width="415" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;sketch=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="t6xbt6aNctxhQw9j027M-1" source="c1qJRLCpccET18l-roq6-0" target="c1qJRLCpccET18l-roq6-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-7" value="Check Limit And Capacity" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="c1qJRLCpccET18l-roq6-6">
+          <mxGeometry x="-0.1771" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-0" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Products&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="250" y="110" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-3" value="&lt;span style=&quot;background-color: rgb(151 , 208 , 119)&quot;&gt;Identity&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="513.75" y="230" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="t6xbt6aNctxhQw9j027M-1" source="c1qJRLCpccET18l-roq6-8" target="c1qJRLCpccET18l-roq6-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-8" value="Limitation Checker" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="304.75" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-9" value="" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;dashed=1;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="254" y="380" width="220" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;" edge="1" parent="t6xbt6aNctxhQw9j027M-1" source="c1qJRLCpccET18l-roq6-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365.79999999999995" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-10" value="AP Checker" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="305.75" y="405" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;" edge="1" parent="t6xbt6aNctxhQw9j027M-1" target="c1qJRLCpccET18l-roq6-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365.79999999999995" y="540" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-13" value="&lt;span&gt;Capacity Checker&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="370" y="360" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-14" value="CCC Checker" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="305.75" y="568" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-17" value="&lt;div style=&quot;direction: ltr&quot;&gt;CPC Checker&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;rotation=0;textDirection=ltr;horizontal=0;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="297.75" y="462" width="36" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-18" value="Account CPC Checker" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="333.75" y="462" width="100" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="c1qJRLCpccET18l-roq6-19" value="Company CPC Checker" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=1;fontFamily=Comic Sans MS;fillColor=#FFD966;" vertex="1" parent="t6xbt6aNctxhQw9j027M-1">
+          <mxGeometry x="333.75" y="498" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
