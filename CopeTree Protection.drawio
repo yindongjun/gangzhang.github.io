@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-31T01:59:05.542Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62" etag="TQ8beaoivCVD83pRNBE2" version="16.1.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-01-04T08:37:07.008Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62" etag="3XxRzhhIsIr0X3JvY7XR" version="16.1.0" type="github" pages="2">
   <diagram id="fnQ0w6gqZ-DMgajxoQaj" name="3Level Protection">
     <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -64,10 +64,10 @@
         <mxCell id="9cQr-cPYJvj78TX2r7sk-0" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.redis;fillColor=#2E73B8;gradientColor=none;sketch=0;fontFamily=Comic Sans MS;" vertex="1" parent="JE05Aqk0xENQjdEiZNgJ-1">
           <mxGeometry x="554" y="380" width="48" height="43" as="geometry" />
         </mxCell>
-        <mxCell id="U1Um3_NiYJgAqI5tz2-r-0" value="用户每100次进行一次滑动校验" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;labelBackgroundColor=#FFFFFF;sketch=1;fontFamily=Comic Sans MS;fillColor=none;" vertex="1" parent="JE05Aqk0xENQjdEiZNgJ-1">
+        <mxCell id="U1Um3_NiYJgAqI5tz2-r-0" value="用户每50次进行一次滑动校验" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;labelBackgroundColor=#FFFFFF;sketch=1;fontFamily=Comic Sans MS;fillColor=none;" vertex="1" parent="JE05Aqk0xENQjdEiZNgJ-1">
           <mxGeometry x="630" y="170" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="U1Um3_NiYJgAqI5tz2-r-1" value="用户接口访问限制：&lt;br&gt;xx次/H" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;labelBackgroundColor=#FFFFFF;sketch=1;fontFamily=Comic Sans MS;fillColor=none;" vertex="1" parent="JE05Aqk0xENQjdEiZNgJ-1">
+        <mxCell id="U1Um3_NiYJgAqI5tz2-r-1" value="用户接口访问限制：&lt;br&gt;300次/H" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;labelBackgroundColor=#FFFFFF;sketch=1;fontFamily=Comic Sans MS;fillColor=none;" vertex="1" parent="JE05Aqk0xENQjdEiZNgJ-1">
           <mxGeometry x="640" y="270" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="U1Um3_NiYJgAqI5tz2-r-2" value="BloomFilter：判断&lt;br&gt;HyperLog：次数" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;labelBackgroundColor=#FFFFFF;sketch=1;fontFamily=Comic Sans MS;fillColor=none;" vertex="1" parent="JE05Aqk0xENQjdEiZNgJ-1">
