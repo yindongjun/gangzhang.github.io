@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-01-07T06:45:08.418Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62" etag="ijVg1CTqAEoeEqmqtRv6" version="16.1.0" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-01-07T08:48:33.214Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62" etag="SsIAObcLLi7AWUrxXODf" version="16.1.0" type="github" pages="3">
   <diagram name="RD Search" id="c7488fd3-1785-93aa-aadb-54a6760d102a">
-    <mxGraphModel dx="1318" dy="859" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1318" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -295,7 +295,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="W7QGvqt7PZco8-axT53I-95" value="Patent Data" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;sketch=1;fillColor=#97D077;" vertex="1" parent="W7QGvqt7PZco8-axT53I-1">
+        <mxCell id="W7QGvqt7PZco8-axT53I-95" value="Data Service" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;sketch=1;fillColor=#97D077;" vertex="1" parent="W7QGvqt7PZco8-axT53I-1">
           <mxGeometry x="-37" y="290" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="W7QGvqt7PZco8-axT53I-96" value="view" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/nuvola2/48x48/actions/view_text.png;sketch=1;fontFamily=Comic Sans MS;fontSize=12;fontColor=none;fillColor=#97D077;" vertex="1" parent="W7QGvqt7PZco8-axT53I-1">
@@ -366,7 +366,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="eR6YzTxMcOF3JRhMjU25" name="workspace sorting">
-    <mxGraphModel dx="2013" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2013" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="dq4_YLywr2Hm-mf8xSrI-0" />
         <mxCell id="dq4_YLywr2Hm-mf8xSrI-1" parent="dq4_YLywr2Hm-mf8xSrI-0" />
@@ -474,7 +474,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="R3it6oTg2vtklHYUwtgD-24" value="Patent Data" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;sketch=1;fillColor=#97D077;" vertex="1" parent="dq4_YLywr2Hm-mf8xSrI-1">
+        <mxCell id="R3it6oTg2vtklHYUwtgD-24" value="Data Service" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;sketch=1;fillColor=#97D077;" vertex="1" parent="dq4_YLywr2Hm-mf8xSrI-1">
           <mxGeometry x="25" y="290" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="R3it6oTg2vtklHYUwtgD-25" value="view" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/nuvola2/48x48/actions/view_text.png;sketch=1;fontFamily=Comic Sans MS;fontSize=12;fontColor=none;fillColor=#97D077;" vertex="1" parent="dq4_YLywr2Hm-mf8xSrI-1">
