@@ -1,1 +1,42 @@
-<mxfile host="app.diagrams.net" modified="2022-02-24T04:06:38.033Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.56" version="16.6.1" etag="rASnYGxJYkBgA9J4_aS6" type="github"><diagram id="1HXmKk2skKwjx9_je38B">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-02-24T08:37:22.553Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.56" etag="qV0rTZu9k6y24Gn82ZQQ" version="16.6.1" type="github">
+  <diagram id="1HXmKk2skKwjx9_je38B" name="Page-1">
+    <mxGraphModel dx="915" dy="591" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-1" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="370" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-9" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-2" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Web FE Header&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="155" y="490" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-8" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;entryX=1;entryY=0.5;entryDx=0;entryDy=0;sketch=1;" edge="1" parent="1" source="2ERfByTIaMY-XtLdaHcJ-5" target="2ERfByTIaMY-XtLdaHcJ-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-5" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="370" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-6" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;BE&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="665" y="490" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-7" value="Static Product Resources" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="70" y="450" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-10" value="options depends on&lt;br&gt;&amp;nbsp;user privilege" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="390" y="380" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;" edge="1" parent="1" source="2ERfByTIaMY-XtLdaHcJ-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="226.25" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2ERfByTIaMY-XtLdaHcJ-11" value="Options Logic" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="122.5" y="390" width="207.5" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
