@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-01T08:02:34.972Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.53" etag="RQ5D5STjK4GKGzCcexGy" version="18.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-01T09:21:45.504Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.53" etag="N6SvZFuYJlLAlER6OfLi" version="18.1.2" type="github">
   <diagram id="w23tw08ASIh7nbf2GKmj" name="Page-1">
     <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -127,7 +127,7 @@
         <mxCell id="M0uQYywCyfteG3hm3l-B-63" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.redis;fillColor=#2E73B8;gradientColor=none;rounded=0;labelBackgroundColor=none;sketch=0;fontFamily=Comic Sans MS;fontSize=14;fontColor=none;strokeColor=#67AB9F;" vertex="1" parent="1">
           <mxGeometry x="640" y="685" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="M0uQYywCyfteG3hm3l-B-66" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=0;fontFamily=Comic Sans MS;fontSize=14;fontColor=none;strokeColor=#000000;fillColor=default;" vertex="1" parent="1">
+        <mxCell id="M0uQYywCyfteG3hm3l-B-66" value="" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=0;fontFamily=Comic Sans MS;fontSize=14;strokeColor=#36393d;fillColor=#eeeeee;" vertex="1" parent="1">
           <mxGeometry x="840" y="540" width="120" height="239" as="geometry" />
         </mxCell>
         <mxCell id="M0uQYywCyfteG3hm3l-B-67" value="Push SDK" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontFamily=Comic Sans MS;fontColor=none;" vertex="1" parent="1">
