@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-06T03:14:58.552Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.33" etag="dFqEXRLwEo3rF6Bjz1EW" version="19.0.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-06-07T07:14:36.648Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.33" etag="N3HlNoMAc70-WcBH6ukE" version="19.0.0" type="github" pages="2">
   <diagram id="w23tw08ASIh7nbf2GKmj" name="Page-1">
-    <mxGraphModel dx="915" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -55,19 +55,19 @@
         <mxCell id="M0uQYywCyfteG3hm3l-B-30" value="Template Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="333" y="458" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="M0uQYywCyfteG3hm3l-B-31" value="Statistics" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
+        <mxCell id="M0uQYywCyfteG3hm3l-B-31" value="Statistics" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;fontColor=#333333;strokeColor=#666666;fillStyle=auto;" parent="1" vertex="1">
           <mxGeometry x="482" y="408" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="M0uQYywCyfteG3hm3l-B-32" value="Target Grouping" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="482" y="458" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="M0uQYywCyfteG3hm3l-B-33" value="Censorship Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
+        <mxCell id="M0uQYywCyfteG3hm3l-B-33" value="Censorship Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="625" y="409" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="M0uQYywCyfteG3hm3l-B-34" value="Channel Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
+        <mxCell id="M0uQYywCyfteG3hm3l-B-34" value="Scene Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="190" y="409" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="M0uQYywCyfteG3hm3l-B-35" value="Sender Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
+        <mxCell id="M0uQYywCyfteG3hm3l-B-35" value="Channel&lt;br&gt;Management" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="190" y="459" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="M0uQYywCyfteG3hm3l-B-37" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;fontFamily=Comic Sans MS;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
@@ -226,7 +226,7 @@
             <mxPoint x="827" y="560" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="M0uQYywCyfteG3hm3l-B-97" value="Security" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;" parent="1" vertex="1">
+        <mxCell id="M0uQYywCyfteG3hm3l-B-97" value="Security" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;fontFamily=Comic Sans MS;fontSize=14;fillColor=default;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="625" y="459" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
