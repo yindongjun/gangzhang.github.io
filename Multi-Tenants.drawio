@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-20T14:38:40.910Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.41" etag="_vStNdtBFXQRaqv0M5YZ" version="19.0.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-06-20T14:44:48.648Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.41" etag="VOHnkgWdeuLz4XrbMMeS" version="19.0.3" type="github" pages="2">
   <diagram id="HS0wQoJ3kTfo8EUwEemg" name="Page-1">
     <mxGraphModel dx="1186" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -156,7 +156,7 @@
         <mxCell id="0g1072mod6FUskHtr54z-7" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;bop_account_last_login&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="50" y="646" width="140" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="0g1072mod6FUskHtr54z-8" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_privilege&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
+        <mxCell id="0g1072mod6FUskHtr54z-8" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_role&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="311.5" y="350" width="155" height="50" as="geometry" />
         </mxCell>
         <mxCell id="0g1072mod6FUskHtr54z-9" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_profile&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
@@ -192,10 +192,10 @@
         <mxCell id="0g1072mod6FUskHtr54z-19" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;identity_account_dingtalk&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="30" y="476" width="160" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="0g1072mod6FUskHtr54z-20" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;identity_account_role&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
+        <mxCell id="0g1072mod6FUskHtr54z-20" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_package&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="20" y="536" width="160" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="0g1072mod6FUskHtr54z-21" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;identity_account_package&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
+        <mxCell id="0g1072mod6FUskHtr54z-21" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;bop_account_privilege&lt;/span&gt;&lt;font face=&quot;Comic Sans MS&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="30" y="591" width="160" height="50" as="geometry" />
         </mxCell>
         <mxCell id="0g1072mod6FUskHtr54z-22" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;identity_session_kicked_log&lt;/font&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;" vertex="1" parent="1">
@@ -297,7 +297,7 @@
         <mxCell id="0g1072mod6FUskHtr54z-39" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_binding&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="800" y="830" width="155" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="0g1072mod6FUskHtr54z-40" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_privilege&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fillStyle=solid;" vertex="1" parent="1">
+        <mxCell id="0g1072mod6FUskHtr54z-40" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;bop_account_privilege&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fillStyle=solid;" vertex="1" parent="1">
           <mxGeometry x="997.5" y="641" width="155" height="50" as="geometry" />
         </mxCell>
         <mxCell id="0g1072mod6FUskHtr54z-41" value="&lt;span style=&quot;font-family: &amp;quot;Comic Sans MS&amp;quot;;&quot;&gt;identity_account_profile&lt;/span&gt;" style="whiteSpace=wrap;html=1;sketch=1;fillColor=#f8cecc;strokeColor=#b85450;fillStyle=solid;" vertex="1" parent="1">
