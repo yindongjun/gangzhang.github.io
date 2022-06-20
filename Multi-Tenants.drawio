@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-20T12:11:36.197Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.41" etag="XcMcSAS-GYnTHDYO9uov" version="19.0.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-06-20T12:14:49.743Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.41" etag="ferYxCcDirS12ezamXq9" version="19.0.3" type="github" pages="2">
   <diagram id="HS0wQoJ3kTfo8EUwEemg" name="Page-1">
     <mxGraphModel dx="1186" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -434,6 +434,30 @@
             <mxPoint x="1150" y="482.5" as="sourcePoint" />
             <mxPoint x="1109" y="410" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="180" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="140" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="220" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-4" value="identity_account" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="140" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-5" value="patsnap_user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="180" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-6" value="tenant_user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="220" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="258" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7KdhA769VSDEmrFlJWCD-9" value="Both patsnap/&lt;br&gt;tenant user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="253" width="90" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
