@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-24T07:45:49.525Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50" etag="jiFbk6ioVgMnDTWRnrDM" version="20.3.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-24T07:47:46.543Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50" etag="PjdNEl89tP8TLu2V8rmd" version="20.3.6" type="github" pages="2">
   <diagram id="T2TmQAWpMwrT0eOuISGU" name="第 1 页">
     <mxGraphModel dx="831" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -385,14 +385,6 @@
             <mxPoint x="118" y="412.5" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1LDfN-X6wONoSfxq1nkH-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;exitX=1;exitY=0.75;exitDx=0;exitDy=0;fillColor=#d5e8d4;strokeColor=#82b366;sketch=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="1LDfN-X6wONoSfxq1nkH-20" target="1LDfN-X6wONoSfxq1nkH-11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="1LDfN-X6wONoSfxq1nkH-19" value="&lt;span style=&quot;font-size: 12px; background-color: rgb(248, 249, 250);&quot;&gt;Sends JWT and redirects&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="1LDfN-X6wONoSfxq1nkH-18">
-          <mxGeometry x="-0.236" y="-1" relative="1" as="geometry">
-            <mxPoint x="13" y="20" as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="8tpcsEQfSTgW4YljV44M-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="155" y="330" as="sourcePoint" />
@@ -437,9 +429,6 @@
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-30" value="Stores Core Token Cookie" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
           <mxGeometry x="158" y="477" width="170" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="1LDfN-X6wONoSfxq1nkH-32" value="4" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="186" y="371" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-34" value="2" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="318" y="320" width="20" height="20" as="geometry" />
