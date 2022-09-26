@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-26T06:15:14.478Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50" etag="0qsHLM4Ack2Y2TiRA0b8" version="20.3.6" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-09-26T10:56:36.365Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50" etag="ifYqZ25jj7mTPu8UfJhC" version="20.3.6" type="github" pages="3">
   <diagram id="T2TmQAWpMwrT0eOuISGU" name="Inno SSO">
     <mxGraphModel dx="1077" dy="703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -293,7 +293,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="eWLDQkWMyI_EUQf4suzm" name="Inno SSO Customize">
-    <mxGraphModel dx="1185" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="914" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -325,7 +325,7 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8tpcsEQfSTgW4YljV44M-24" value="Request With Core Token&lt;br&gt;Refresh Token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="1LDfN-X6wONoSfxq1nkH-6">
+        <mxCell id="8tpcsEQfSTgW4YljV44M-24" value="Request With Core Token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="1LDfN-X6wONoSfxq1nkH-6">
           <mxGeometry x="0.3962" relative="1" as="geometry">
             <mxPoint x="52" as="offset" />
           </mxGeometry>
@@ -341,20 +341,6 @@
         <mxCell id="1LDfN-X6wONoSfxq1nkH-10" value="Request With Inno Token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="1LDfN-X6wONoSfxq1nkH-9">
           <mxGeometry x="-0.0561" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8tpcsEQfSTgW4YljV44M-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Comic Sans MS;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="1LDfN-X6wONoSfxq1nkH-11" target="1LDfN-X6wONoSfxq1nkH-41">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="420" y="430" />
-              <mxPoint x="420" y="390" />
-              <mxPoint x="666" y="390" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8tpcsEQfSTgW4YljV44M-22" value="Get Token By Ticket" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="8tpcsEQfSTgW4YljV44M-18">
-          <mxGeometry x="-0.2879" y="4" relative="1" as="geometry">
-            <mxPoint x="41" y="5" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-11" value="yunchuang.inno.com" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fillColor=#fff2cc;strokeColor=#d6b656;fillStyle=solid;sketch=1;" vertex="1" parent="1">
@@ -375,7 +361,7 @@
             <mxPoint x="198" y="150" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8tpcsEQfSTgW4YljV44M-14" value="Redirect with one-time ticket" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="8tpcsEQfSTgW4YljV44M-12">
+        <mxCell id="8tpcsEQfSTgW4YljV44M-14" value="Redirect with refresh-token" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="8tpcsEQfSTgW4YljV44M-12">
           <mxGeometry x="-0.578" y="-1" relative="1" as="geometry">
             <mxPoint x="28" y="-10" as="offset" />
           </mxGeometry>
@@ -440,7 +426,7 @@
           <mxGeometry x="318" y="320" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-35" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;10&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="218" y="465" width="20" height="20" as="geometry" />
+          <mxGeometry x="390" y="332.5" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;jumpStyle=none;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shadow=0;fontFamily=Comic Sans MS;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="1LDfN-X6wONoSfxq1nkH-37" target="1LDfN-X6wONoSfxq1nkH-42">
           <mxGeometry relative="1" as="geometry" />
@@ -464,7 +450,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-40" value="12" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="459" y="445" width="20" height="20" as="geometry" />
+          <mxGeometry x="530" y="520" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-41" value="account-service.zhihuiya.com" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fillStyle=solid;sketch=1;" vertex="1" parent="1">
           <mxGeometry x="596" y="217.5" width="140" height="50" as="geometry" />
@@ -477,9 +463,6 @@
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-44" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Core Gateway&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nat_gateway;" vertex="1" parent="1">
           <mxGeometry x="378" y="212.5" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="1LDfN-X6wONoSfxq1nkH-49" value="13" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="538" y="520" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="8tpcsEQfSTgW4YljV44M-2" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;rounded=0;startArrow=classic;startFill=1;sketch=1;endArrow=none;" edge="1" parent="1" source="1LDfN-X6wONoSfxq1nkH-20">
           <mxGeometry relative="1" as="geometry">
@@ -496,31 +479,19 @@
           <mxGeometry x="166" y="260" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="8tpcsEQfSTgW4YljV44M-7" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;7&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="208" y="80" width="20" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="8tpcsEQfSTgW4YljV44M-9" style="orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;sketch=1;exitX=0.05;exitY=-0.05;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" target="1LDfN-X6wONoSfxq1nkH-44">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="153" y="110" />
-              <mxPoint x="410" y="110" />
-            </Array>
-            <mxPoint x="153" y="165" as="sourcePoint" />
-            <mxPoint x="410" y="210" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8tpcsEQfSTgW4YljV44M-11" value="Store tokens with one-time ticket" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Comic Sans MS;" vertex="1" connectable="0" parent="8tpcsEQfSTgW4YljV44M-9">
-          <mxGeometry x="-0.4502" y="2" relative="1" as="geometry">
-            <mxPoint y="1" as="offset" />
-          </mxGeometry>
+          <mxGeometry x="195" y="130" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="8tpcsEQfSTgW4YljV44M-13" value="8" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="196" y="128" width="20" height="20" as="geometry" />
+          <mxGeometry x="418" y="380" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="1LDfN-X6wONoSfxq1nkH-48" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;9&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="479" y="372.5" width="20" height="20" as="geometry" />
+          <mxGeometry x="228" y="460" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="8tpcsEQfSTgW4YljV44M-23" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;11&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontFamily=Tahoma;spacingBottom=4;spacingRight=2;strokeColor=#82b366;fillStyle=solid;fillColor=#d5e8d4;sketch=1;" vertex="1" parent="1">
-          <mxGeometry x="390" y="340" width="20" height="20" as="geometry" />
+          <mxGeometry x="459" y="445" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kRS-NQ7R6rCn9hRLrvY1-1" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;Refresh Token&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontFamily=Comic Sans MS;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="414" y="360" width="110" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
