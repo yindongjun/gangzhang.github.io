@@ -1,1 +1,88 @@
-<mxfile host="app.diagrams.net" modified="2022-10-21T05:59:17.012Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47" version="20.4.2" etag="yvS8Lcgev8kqN4h1hWlq" type="github"><diagram id="YLb3a5vJWFS_sFd7sk4r">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-21T07:32:26.542Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47" etag="1PKQ4twz-YJ1nUe7GVtW" version="20.4.2" type="github">
+  <diagram id="YLb3a5vJWFS_sFd7sk4r" name="第 1 页">
+    <mxGraphModel dx="1139" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DHQ5wbl0hE-QldlWepge-29" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;sketch=1;fontFamily=Comic Sans MS;dashed=1;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="539" y="160" width="150" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-28" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;sketch=1;fontFamily=Comic Sans MS;dashed=1;strokeColor=#D5E8D4;" vertex="1" parent="1">
+          <mxGeometry x="139" y="159" width="150" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-12" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;sketch=1;fontFamily=Comic Sans MS;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="267" y="445" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;sketch=1;" edge="1" parent="1" source="DHQ5wbl0hE-QldlWepge-1" target="DHQ5wbl0hE-QldlWepge-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-1" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.tenant_admin;" vertex="1" parent="1">
+          <mxGeometry x="179" y="190" width="56" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontFamily=Comic Sans MS;" edge="1" parent="1" source="DHQ5wbl0hE-QldlWepge-2" target="DHQ5wbl0hE-QldlWepge-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-2" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Backoffice&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="147" y="324.6" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-3" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/ionicons-fill-vol-2/512/logo-vue-128.png;shadow=0;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="147" y="324.6" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-4" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Docker.svg;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="147" y="300" width="30" height="24.6" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-6" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.aurora_instance;shadow=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="329" y="450" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-8" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.aurora_instance;shadow=0;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="429" y="450" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-9" value="Master" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="329" y="525" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-10" value="Replica" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="429" y="525" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-14" value="Admin" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="179" y="245" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Comic Sans MS;" edge="1" parent="1" source="DHQ5wbl0hE-QldlWepge-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="469" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="619" y="420" />
+              <mxPoint x="469" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-16" value="&lt;font face=&quot;Comic Sans MS&quot;&gt;Identity Service&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="559" y="315" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-18" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Docker.svg;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="559" y="285" width="30" height="24.6" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-19" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/boxicons-logos/24/bxl-spring-boot-128.png;shadow=0;dashed=1;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="175" y="324.6" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-20" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/boxicons-logos/24/bxl-spring-boot-128.png;shadow=0;dashed=1;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="560" y="315" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Comic Sans MS;" edge="1" parent="1" source="DHQ5wbl0hE-QldlWepge-22" target="DHQ5wbl0hE-QldlWepge-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-22" value="Products Service" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="559" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-23" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/boxicons-logos/24/bxl-spring-boot-128.png;shadow=0;dashed=1;sketch=1;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="560" y="200" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-26" value="Config Capacity" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;sketch=1;fontFamily=Comic Sans MS;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="139" y="120" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DHQ5wbl0hE-QldlWepge-27" value="Acquire Capacity" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;sketch=1;fontFamily=Comic Sans MS;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="539" y="120" width="150" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
